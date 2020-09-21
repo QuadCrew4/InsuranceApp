@@ -12,6 +12,7 @@ export class InsuranceService {
   claimList:ClaimModule[]=[];
   addressDetails:AddressModule[]=[];
   bankDetails:BankDetailsModule[]=[];
+List:ClaimModule[]=[];
 
   constructor() { }
   saveClaim(claim:ClaimModule)
@@ -26,5 +27,8 @@ export class InsuranceService {
   {
     this.addressDetails.push(address);
   }
- 
+  getList():ClaimModule[]{
+   
+    return this.List;
+  }
   }

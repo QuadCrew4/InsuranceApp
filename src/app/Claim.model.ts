@@ -9,7 +9,7 @@ export class ClaimModule
     public phoneno:String;
     public Reason : String;
    
-    //public address : AddressModule;
-   // public bankdetails: BankDetailsModule;
+    public address : AddressModule;
+   public bankdetails: BankDetailsModule;
 
 }

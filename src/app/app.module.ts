@@ -7,6 +7,7 @@ import { ClaimInsuranceComponent } from './claim-insurance/claim-insurance.compo
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FurtherdetailsComponent } from './furtherdetails/furtherdetails.component';
 import { PdfComponent } from './pdf/pdf.component';
+import { ClaimhistoryComponent } from './claimhistory/claimhistory.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PdfComponent } from './pdf/pdf.component';
     AppComponent,
     ClaimInsuranceComponent,
     FurtherdetailsComponent,
-    PdfComponent
+    PdfComponent,
+    ClaimhistoryComponent
   ],
   imports: [
     BrowserModule,

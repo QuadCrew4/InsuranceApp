@@ -48,7 +48,7 @@ export class FurtherdetailsComponent implements OnInit {
           
            Claimed Succesfully
             `);
-    // this.router.navigate(['claim-insurance']);
+     this.router.navigate(['claimhistory']);
     
 
   }
