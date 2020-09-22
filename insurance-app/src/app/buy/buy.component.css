@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    text-align :center;
+    padding: 10px;
+    font-size: 20px;
+    background-color:#3279a8 ;
+    margin:10px 100px 0px 100px;
+}
+.image{
+    height: 20%;
+    width: 20%;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.regBox{
+    margin-left: 30%;
+    margin-top: 3%;
+    font-size: large;
+}
+.details p{
+    margin-left: 50%;
+    margin-top: 20px;
+}
+.details{
+    margin-bottom: 10px;
+    font-size: large;
+}
+details p .quote .pay{
+    margin-right: 50%;
+}
+.active{
+    border:4px solid #00f;
+}
