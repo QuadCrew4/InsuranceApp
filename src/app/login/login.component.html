@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="mainlogin">
+      <div class="card">
+        <h2 style="text-align: center;">Login to a world of opportunities!</h2>
+        <form (ngSubmit)="loginCheck()">
+          
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" [(ngModel)]=uname required pattern="[A-Za-z0-9]{4,}" placeholder="Enter Username" name="uname" #un="ngModel">
+              <span class="alert-warning" *ngIf="un.touched && un.invalid">Username is invalid</span><br>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" [(ngModel)]=psw placeholder="Enter Password" required pattern="[A-Za-z0-9]{8}" name="psw" #ps="ngModel">
+              <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password is invalid</span><br>
+              <label for="role"><b>Role  </b>
+                <select name="role" [(ngModel)]=role>
+                    <option [value]="User" selected>User</option>
+                    <option value="Admin">Admin</option>
+                </select></label><br>
+              <button type="submit" class="but">Login</button>
+              <br>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+          
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>

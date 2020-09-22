@@ -8,6 +8,13 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FurtherdetailsComponent } from './furtherdetails/furtherdetails.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { ClaimhistoryComponent } from './claimhistory/claimhistory.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AdminComponent } from './admin/admin.component';
+import { CalculateComponent } from './calculate/calculate.component';
 
 
 @NgModule({
@@ -16,7 +23,14 @@ import { ClaimhistoryComponent } from './claimhistory/claimhistory.component';
     ClaimInsuranceComponent,
     FurtherdetailsComponent,
     PdfComponent,
-    ClaimhistoryComponent
+    ClaimhistoryComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    AboutComponent,
+    ProfileComponent,
+    AdminComponent,
+    CalculateComponent
   ],
   imports: [
     BrowserModule,
