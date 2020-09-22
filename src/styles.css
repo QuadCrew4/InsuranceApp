@@ -1,1 +1,173 @@
 /* You can add global styles to this file, and also import other style files */
+.main{
+    font-family: 'Muli';
+    background-color: #f1f1f1;
+    margin-left: 100px;
+    margin-right: 100px; 
+}
+.mainlogin{
+  margin: auto;
+}
+/* Header Tag */
+.header h1{
+    font-family: 'Muli';
+    background-color:white;
+    text-align: center;
+    padding: 10px;
+    display: inline;
+    
+  }
+  .header img{
+      height: 100px;
+      width: 100px;
+      margin-left: 1250px;
+  }
+  h1{
+    background-color:white;
+    padding: 30px;
+    text-align: center;
+  }
+  /* The navbar container */
+.topnav {
+    overflow: hidden;
+  }
+  /* First Card */
+  .card:nth-child(1){
+    background-color:white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  /* Image containers */
+  .card:nth-child(2)
+  {
+      display: inline;
+  }
+    div.cj {
+    float: left;
+    width: 25%;
+    padding: 5px;
+  }
+  .card::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* Input fields container */
+  .container:nth-child(1){
+    margin-left: 60px;
+    width: 200%;
+  }
+  /* Buttons container */
+  .container:nth-child(2){
+    margin-left: 65px;
+    width: 80%;
+  }
+  /* Input fields */
+  input[type=text], input[type=password], input[type=tel], input[type=email],input[type=date]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    width: 40%;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  label{
+    display: block;
+  }
+  /* Button container */
+  .but, .cancelbtn {
+    background-color: #1b008b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+  }
+  .but:hover, .cancelbtn:hover {
+    opacity: 0.8;
+  }
+  /* Cancel button */
+  .cancelbtn {
+    width: auto;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  /* Styles for About Us */
+  .columnimg {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .cardimg {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+  }
+  
+  .containerimg {
+    padding: 0 16px;
+  }
+  
+  .containerimg::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  /* Styles for Profile */
+  .columnimg1 {
+    float: left;
+    width: 20%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  .containerimg1 {
+    padding: 0 16px;
+  }
+  
+  .containerimg1::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .buttonimg1 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .buttonimg1:hover {
+    background-color: #555;
+  }
+  .calculate{
+    margin-left: 350px;
+  }
+
+  /* Footer part */
+  .footer {
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+  }

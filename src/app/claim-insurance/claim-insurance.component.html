@@ -29,12 +29,13 @@
 
     <div class="form-group">
         <label for="reason"><b>Reason to Claim Insurance</b></label>
-        <select  class="form-control" name= "reason" [(ngModel)]="claim.reason">
+        <select  class="form-control" name= "reason" [(ngModel)]="claim.reason" required>
             <option value="Natural Disaster">Natural Disaster</option>
             <option value="Man-Made Disaster">Man-Made Disaster</option>
             <option value="Road Accident">Road Accident</option>
             <option value="Theft">Theft</option>
         </select>
+        <span *ngIf="reason.touched && reason.invalid" class="alert-danger">Select Reason</span>
     </div>
 
     
