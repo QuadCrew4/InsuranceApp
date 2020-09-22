@@ -37,21 +37,6 @@
     padding: 20px;
     margin-top: 20px;
   }
-  /* Image containers */
-  .card:nth-child(2)
-  {
-      display: inline;
-  }
-    div.cj {
-    float: left;
-    width: 25%;
-    padding: 5px;
-  }
-  .card::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
   /* Input fields container */
   .container:nth-child(1){
     margin-left: 60px;
@@ -106,7 +91,6 @@
   }
   
   .cardimg {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
   }
   
