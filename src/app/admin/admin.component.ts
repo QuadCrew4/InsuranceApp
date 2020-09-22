@@ -12,4 +12,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  validate(){
+    alert("your ticket is validated");
+  }
+
 }

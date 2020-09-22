@@ -1,0 +1,34 @@
+[
+    {
+        "regno": "JH05AY5721",
+        "mfr": "SHILPI KUNDU",
+        "model": "YAMAHA",
+        "dlicense": "SEE78935TY",
+        "price": 90000,
+        "pdate" : "11/12/20",
+        "engno" : 12345,
+        "chno" :98707
+
+    },
+    {
+        "regno": "BH90WY5721",
+        "mfr": "SEEMA SHARMA",
+        "model": "HONDA SHINE",
+        "dlicense": "PMS78935TY",
+        "price": 100000,
+        "pdate" : "8/8/20",
+        "engno" : 12345,
+        "chno" :98707
+    },
+    {
+        "regno": "GJ90WY5789",
+        "mfr": "RIYA SHARMA",
+        "model": "ROYAL ENFIELD",
+        "dlicense": "OKS78935TY",
+        "price": 350000,
+        "pdate" : "8/8/20",
+        "engno" : 12345,
+        "chno" :99807
+    }
+
+]
