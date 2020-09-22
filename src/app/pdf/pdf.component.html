@@ -8,27 +8,28 @@
     <div class="form-group row">
         <div class="col-sm-6">
         <label for="vehicleimage"><b>Upload Vehicle Image</b></label>
-        <input class="form-control" style="height: 50px;" type="file" (change)="onFileSelected($event)" >
-        <img [src]="imgURL" height="200" *ngIf="imgURL">   
+        <input class="form-control" style="height: 50px;" type="file" (change)="onFileSelected($event)" required>
+        
+        
     </div>
     
     <div class="col-sm-6">    
             <label for="FIRfile"><b>Upload FIR</b></label>
-            <input class="form-control input-lg" style="height: 50px;"  type="file" (change)="onFileSelected($event)" >  
+            <input class="form-control input-lg" style="height: 50px;"  type="file" (change)="onFileSelected($event)" required >  
     </div>
     </div>
     <div class="clearfix"></div>
 
     <div class="form-group row">
-        <div class="col-sm-6">
-            <label for="firstname"><b>First name</b></label>
-            <input type="text" class="form-control" [(ngModel)]=address.firstname 
-            required pattern="[A-Za-z]{3,}" placeholder="First Name" #firstname='ngModel'>
-            <span *ngIf="firstname.touched && firstname.invalid" class="alert-danger">Invalid First Name</span>
+        <div class='col-sm-6'>
+            <label for="firstname"><strong>First Name</strong></label>
+            <input class="form-control" name="firstname" [(ngModel)]=address.firstname
+            required pattern="[0-9]{1}" placeholder="Enter Your First Name" #firstname='ngModel'>
+            <span *ngIf="firstname.touched && firstname.invalid" class="alert-danger">Invalid Name</span>
         </div>
         <div class="col-sm-6">
             <label for="lastname"><b>Last name</b></label>
-            <input type="text" class="form-control" [(ngModel)]=address.lastname
+            <input  class="form-control" [(ngModel)]=address.lastname name="lastname"
             required pattern="[A-Za-z]{3,}" placeholder="Last Name" #lastname='ngModel'>
             <span *ngIf="lastname.touched && lastname.invalid" class="alert-danger">Invalid Last Name</span>
         </div>
@@ -36,30 +37,35 @@
     <div class="form-group row">
         <div class="col-sm-6">
             <label for="inputAddressLine1"><b>Address</b></label>
-            <input type="text" class="form-control" [(ngModel)]=address.street
-             placeholder="Street Address">
+            <input type="text" class="form-control" [(ngModel)]=address.street name="inputAddressLine1"
+             placeholder="Street Address"   required pattern="[A-Za-z]{3,}" #street='ngModel' >
+             <span *ngIf="street.touched && street.invalid" class="alert-danger">Invalid Street Name</span>
         </div>
         <div class="col-sm-6">
             <label for="inputAddressLine2"><b>Address (Line 2)</b></label>
-            <input type="text" class="form-control"  [(ngModel)]=address.landmark
-            placeholder="Landmark">
+            <input type="text" class="form-control"  [(ngModel)]=address.landmark name="inputAddressLine2"
+            placeholder="Landmark" pattern="[A-Za-z]{3,}" #landmark='ngModel'>
+            <span *ngIf="landmark.touched && landmark.invalid" class="alert-danger">Invalid Landmark</span>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-sm-6">
             <label for="inputCity"><b>City</b></label>
-            <input type="text" class="form-control" id="inputCity" 
-            [(ngModel)]=address.city placeholder="City">
+            <input type="text" class="form-control" name="inputCity" 
+            [(ngModel)]=address.city placeholder="City" pattern="[A-Za-z]{5,}" #city='ngModel'>
+            <span *ngIf="city.touched && city.invalid" class="alert-danger">Invalid City</span>
         </div>
         <div class="col-sm-3">
             <label for="inputState"><b>State</b></label>
-            <input type="text" class="form-control" id="inputState" 
-            [(ngModel)]=address.state placeholder="State">
+            <input type="text" class="form-control" name="inputState" 
+            [(ngModel)]=address.state placeholder="State" required pattern="[A-Za-z]{5,}" #state='ngModel'>
+            <span *ngIf="state.touched && state.invalid" class="alert-danger">Invalid State</span>  
         </div>
         <div class="col-sm-3">
             <label for="inputPostalCode"><b>Postal Code</b></label>
-            <input type="text" class="form-control" id="inputPostalCode"
-            [(ngModel)]=address.postalcode placeholder="Postal Code">
+            <input type="text" class="form-control" name="inputPostalCode"
+            [(ngModel)]=address.postalcode placeholder="Postal Code" required pattern="[0-9]{6}" #postalcode='ngModel'>
+            <span *ngIf="postalcode.touched && postalcode.invalid" class="alert-danger">Invalid Postal Code</span>  
         </div>
     </div>
     <div class="col-md-12 text-center" style="padding-top: 18px;">
