@@ -1,0 +1,48 @@
+<h3>Claim Insurance</h3>
+<div class="jumbotron" style="background-color:#85C1E9 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h4 style="text-align: center;"><u>Step 1</u></h4>
+<form (ngSubmit)="proceedNext()" #addForm="ngForm">   
+    <div class='form-group'>
+        <label for="policyno"><strong>Policy No.</strong></label>
+        <input class="form-control" name="policyno" [(ngModel)]=claim.policyno
+        required pattern="[0-9]{1}" placeholder="Enter Your Policy Number" #policyno='ngModel'>
+        <span *ngIf="policyno.touched && policyno.invalid" class="alert-danger">Invalid Policy Number</span>
+    </div>
+   
+    <div class='form-group'>
+        <label for="vehicleno"><strong>Vehicle No.</strong></label>
+        <input class="form-control" name="vehicleno" [(ngModel)]=claim.vehicleno
+        required pattern="[0-9]{3,}" placeholder="Enter Your Vehicle Number" #vehicleno='ngModel'>
+        <span *ngIf="vehicleno.touched && vehicleno.invalid" class="alert-danger">Invalid Vehicle Number</span>
+    </div>
+   
+
+    <div class="form-group">
+        <label for="phoneno"><b>Phone No.</b></label>
+        <input class="form-control" name="phoneno" [(ngModel)]=claim.phoneno
+        required pattern="[0-9]{10}" placeholder="Enter Your Phone Number" #phoneno='ngModel'>
+        <span *ngIf="phoneno.touched && phoneno.invalid" class="alert-danger">Invalid Phone Number</span>
+    </div>
+
+    <div class="form-group">
+        <label for="reason"><b>Reason to Claim Insurance</b></label>
+        <select  class="form-control" name= "reason" [(ngModel)]="claim.reason">
+            <option value="Natural Disaster">Natural Disaster</option>
+            <option value="Man-Made Disaster">Man-Made Disaster</option>
+            <option value="Road Accident">Road Accident</option>
+            <option value="Theft">Theft</option>
+        </select>
+    </div>
+
+    
+    <div class="col-md-12 text-center" style="padding-top: 18px; ">
+    <button class="btn btn-primary btn-block btn-success" type="submit" [disabled]="!addForm.valid" >Proceed Next</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
