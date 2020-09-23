@@ -1,39 +1,56 @@
-<div class="row">
-    <div class="mainlogin">
-      <div class="card">
-        <h2>Register to explore amazing career opportunities</h2>
-        <form (ngSubmit)="registerUser()" #registerForm="ngForm">
-            <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" [(ngModel)]=user.username required pattern="[A-Za-z0-9]{4,}" placeholder="Enter Username" name="uname" #un="ngModel">
-              <span class="alert-warning" *ngIf="un.touched && un.invalid">Username is invalid</span><br>
-          
-              <label for="psw"><b>Password</b></label>
-              <input type="password" [(ngModel)]=user.password placeholder="Enter Password" required pattern="[A-Za-z0-9]{8}" name="psw" #ps="ngModel">
-              <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password is invalid</span><br>
-
-              <label for="conpsw"><b>Confirm Password</b></label>
-              <input type="password" [(ngModel)]=conpassword placeholder="Confirm Password" required pattern="{{user.password}}" name="conpsw"  #conps="ngModel">
-              <span class="alert-warning" *ngIf="conps.touched && conps.invalid">Password should be same</span><br>
-
-              <label for="dob"><b>Date of Birth &nbsp;&nbsp;</b></label>
-              <input type="date" id="birthday" name="dob">
-              <br>
-              <label for="email"><b>Email Address</b></label>
-              <input type="email" [(ngModel)]=email placeholder="Enter Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" #em="ngModel">
-              <span class="alert-warning" *ngIf="em.touched && em.invalid">Email is invalid</span><br>
-   
-              <label for="city"><b>Address</b></label>
-              <input type="text" [(ngModel)]=address placeholder="Enter Address" required pattern="[A-Za-z0-9 ]{10,}" name="add" #ad="ngModel">
-              <span class="alert-warning" *ngIf="ad.touched && ad.invalid">Address is invalid</span><br>
-          
-              <label for="mobile"><b>Mobile No.</b></label>
-              <input type="tel" [(ngModel)]=mobile placeholder="Enter Mobile Number" required pattern="[0-9]{10}" name="mobile" #mb="ngModel">
-              <span class="alert-warning" *ngIf="mb.touched && mb.invalid">Mobile no is invalid</span><br>
-
-              <button type="submit" class="but" [disabled]="!registerForm.valid">Register</button>
-            </div>
-          </form>
-      </div>
-    </div>
-  </div>
+<div class="col-md-4 col-md-offset-4" id="login">
+  <section id="inner-wrapper" class="login">
+    <article>
+      <form (ngSubmit)="registerUser()" #registerForm="ngForm">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+            <input type="text" class="form-control" [(ngModel)]=user.username placeholder="Username" required pattern="[A-Za-z0-9]{4,8}" #un1="ngModel" [ngModelOptions] = "{standalone: true}">
+            <span class="alert-warning" *ngIf="un1.touched && un1.invalid">username is invalid</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+            <input type="email" class="form-control" [(ngModel)]=email placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #em="ngModel" [ngModelOptions] = "{standalone: true}">
+            <span class="alert-warning" *ngIf="em.touched && em.invalid">Email is invalid</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+            <input type="date" class="form-control" [(ngModel)]=date>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+            <input type="text" class="form-control" [(ngModel)]=mob placeholder="Contact Number" required pattern="[0-9]{10}" #mb="ngModel" [ngModelOptions] = "{standalone: true}">
+            <span class="alert-warning" *ngIf="mb.touched && mb.invalid">Contact no is invalid</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"> </i></span>
+            <input type="text" class="form-control" [(ngModel)]=address  placeholder="Address" required pattern="[A-Za-z0-9 ]{10,}" #ad="ngModel" [ngModelOptions] = "{standalone: true}">
+            <span class="alert-warning" *ngIf="ad.touched && ad.invalid">Address is invalid</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+            <input type="password" class="form-control" [(ngModel)]=user.password placeholder="Password" required pattern="[A-Za-z0-9]{8}" #ps="ngModel" [ngModelOptions] = "{standalone: true}">
+            <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password is invalid</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key"> </i></span>
+            <input type="password" class="form-control" [(ngModel)]=conpassword placeholder="Confirm Password" required pattern="{{user.password}}" #conps="ngModel" [ngModelOptions] = "{standalone: true}">
+            <span class="alert-warning" *ngIf="conps.touched && conps.invalid">Password should be same</span>
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+      </form>
+    </article>
+  </section></div>

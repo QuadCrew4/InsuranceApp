@@ -18,10 +18,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginCheck(){
-    this.service.loginCheck(this.uname,this.psw);
-    if(this.role == "Admin")
-      this.router.navigate(['admin']);
-    else
-      this.router.navigate(['profile']);
+    this.service.loginCheck(this.uname,this.psw,this.role);
   }
 }

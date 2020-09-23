@@ -1,34 +1,30 @@
-<div class="row">
-    <div class="mainlogin">
-      <div class="card">
-        <h2 style="text-align: center;">Login to a world of opportunities!</h2>
-        <form (ngSubmit)="loginCheck()" #loginForm="ngForm">
-          
-            <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" [(ngModel)]=uname required pattern="[A-Za-z0-9]{4,}" placeholder="Enter Username" name="uname" #un="ngModel">
-              <span class="alert-warning" *ngIf="un.touched && un.invalid">Username is invalid</span><br>
-          
-              <label for="psw"><b>Password</b></label>
-              <input type="password" [(ngModel)]=psw placeholder="Enter Password" required pattern="[A-Za-z0-9]{8}" name="psw" #ps="ngModel">
-              <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password is invalid</span><br>
-              <label for="role"><b>Role  </b>
-                <select name="role" [(ngModel)]=role>
-                    <option [value]="User" selected>User</option>
-                    <option value="Admin">Admin</option>
-                </select></label><br>
-              <button type="submit" class="but" [disabled]="!loginForm.valid">Login</button>
-              <br>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
-          
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-          </form>
-      </div>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../assets/login.png" id="icon" alt="User Icon" />
     </div>
+
+    <!-- Login Form -->
+    <form (ngSubmit)="loginCheck()" #loginForm="ngForm">
+      <input type="text" id="login" class="fadeIn second" [(ngModel)]=uname name="username" placeholder="username" required pattern="[A-Za-z0-9]{4,8}" #un="ngModel">
+      <span class="alert-warning" *ngIf="un.touched && un.invalid">username is invalid</span>
+      <input type="password" id="password" class="fadeIn third" [(ngModel)]=psw name="password" placeholder="password" required pattern="[A-Za-z0-9]{8}" #psw1="ngModel">
+      <span class="alert-warning" *ngIf="psw1.touched && psw1.invalid">password is invalid</span>
+      <br>
+      <select name="role" [(ngModel)]=role style="width: 40%; background-color: DodgerBlue; padding: 5px; margin: 10px;">
+        <option [value]="User" selected>User</option>
+        <option value="Admin">Admin</option>
+      </select><br>
+      <button type="submit" class="fadeIn fourth" [disabled]="!loginForm.valid">Login</button>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
   </div>
+</div>

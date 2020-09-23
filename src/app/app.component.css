@@ -1,0 +1,31 @@
+
+/* Header Tag */
+.header h1{
+    font-family: 'Muli';
+    background-color:white;
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+    
+  }
+  .header img{
+      float: right;
+      height: 100px;
+      width: 100px;
+  }
+  .row h1{
+    background-color:white;
+    padding: 30px;
+  }
+  /* The navbar container */
+.topnav {
+  content: "";
+  clear: both;
+  overflow: hidden;
+  }
+  /* Footer part */
+  .footer {
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+  }
