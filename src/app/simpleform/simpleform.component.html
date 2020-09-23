@@ -1,0 +1,30 @@
+
+
+<form (ngSubmit)="renewPolicy()" #simpleformForm="ngForm">
+    <table class="table table-bordered">
+        <thead><tr><th colspan="2">Renew Page</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Policy No.</td>
+                <td><input type="text" name="policyno1" [(ngModel)]="user.policyno" #policyno="ngModel"  placeholder="" required  pattern="[0-9]{8}" >
+                <span class="alert-warning" *ngIf="policyno.touched && policyno.invalid">Check the Policy No.</span></td>
+            </tr>
+            <tr><td>Mobile No.</td>
+                <td><input type="text" name="mobileno1" [(ngModel)]="user.mobileno" #mobileno="ngModel"  placeholder="123-456-7891" required pattern="[0-9]{10}" >
+                    <span class="alert-warning" *ngIf="mobileno.touched && mobileno.invalid">Check the digits</span>
+                </td>
+            </tr>
+            <tr><td>Email Id</td>
+                <td><input type="email" name="emailid1" [(ngModel)]="user.emailid" #emailid="ngModel"  placeholder= "some@email.com" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" >
+                    <span class="alert-warning" *ngIf="emailid.touched && emailid.invalid">Email Id is invalid</span>
+                </td>
+
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button class="btn btn-success" type="submit" [disabled]="!simpleformForm.valid">Click To Renew</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</form>
