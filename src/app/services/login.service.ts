@@ -14,14 +14,14 @@ export class LoginService {
   }
   loginCheck(uname: String, psw: String, role: String)
   {
-    let result1 = this.users.find(x => x.username == uname);
-    let result2 = this.users.find(x => x.password == psw);
-    if (result1 == null || result2 == null)
+    let result1 = this.users.find(x => x.username === uname);
+    let result2 = this.users.find(x => x.password === psw);
+    if (result1 === null || result2 === null)
       alert("Invalid Username or Password");
     else
     {
       alert("Successfully Logged In");
-      if(role == "Admin")
+      if(role === "Admin")
         this.router.navigate(['admin']);
       else
         this.router.navigate(['profile']);

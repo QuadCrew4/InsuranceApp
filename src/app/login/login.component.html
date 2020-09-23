@@ -9,15 +9,19 @@
 
     <!-- Login Form -->
     <form (ngSubmit)="loginCheck()" #loginForm="ngForm">
+
       <input type="text" id="login" class="fadeIn second" [(ngModel)]=uname name="username" placeholder="username" required pattern="[A-Za-z0-9]{4,8}" #un="ngModel">
       <span class="alert-warning" *ngIf="un.touched && un.invalid">username is invalid</span>
-      <input type="password" id="password" class="fadeIn third" [(ngModel)]=psw name="password" placeholder="password" required pattern="[A-Za-z0-9]{8}" #psw1="ngModel">
+      
+      <input type="password" id="password" class="fadeIn third" [(ngModel)]=psw name="password" placeholder="password" 
+      required pattern="[A-Za-z0-9]{8}" #psw1="ngModel">
       <span class="alert-warning" *ngIf="psw1.touched && psw1.invalid">password is invalid</span>
       <br>
       <select name="role" [(ngModel)]=role style="width: 40%; background-color: DodgerBlue; padding: 5px; margin: 10px;">
         <option [value]="User" selected>User</option>
         <option value="Admin">Admin</option>
-      </select><br>
+      </select>
+      <br>
       <button type="submit" class="fadeIn fourth" [disabled]="!loginForm.valid">Login</button>
     </form>
 

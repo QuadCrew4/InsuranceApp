@@ -16,7 +16,7 @@ body{
     margin-top: 20px;
 }
 .regBox{
-    margin-left: 40%;
+    margin-left: 35%;
     margin-top: 3%;
     font-size: large;
 }
@@ -27,11 +27,12 @@ body{
 }
 .details{
     margin-bottom: 10px;
-    font-size: large;
+    font-size: 1.3rem;
 }
-details p .quote .pay{
-    margin-right: 50%;
+.collapse{
+    margin-right: 20%;
 }
+
 .active{
     border:4px solid #00f;
 }

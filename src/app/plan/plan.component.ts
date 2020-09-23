@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PlanModel} from '../plan.model';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-plan',
   templateUrl: './plan.component.html',
@@ -12,7 +14,7 @@ export class PlanComponent implements OnInit {
   plans:string[];
   
 
-  constructor() { 
+  constructor(private router : Router) { 
     this.years = ['1','2','3']
     this.plans = ['third party policy' , 'comprehensive policy']
   }
@@ -21,11 +23,7 @@ export class PlanComponent implements OnInit {
   }
 
   quote(){
-    alert("route to calculate the price");
-  }
-
-  pay(){
-    alert("payment successful, route to profile page");
+    this.router.navigate(['calculate']);
   }
 
 }

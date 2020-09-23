@@ -11,7 +11,7 @@ import { BuyerService} from '../services/buyer.service';
 })
 export class BuyComponent implements OnInit {
   b : BuyerModel;
-  regno1 : string;
+  regno1 : string = '';
 
   constructor( private service : BuyerService , private router : Router) { }
 
@@ -27,8 +27,10 @@ export class BuyComponent implements OnInit {
   }
 
   searchNo(){
-    this.b = this.service.search((this.regno1).toString());
+    this.b = this.service.search((this.regno1));
   }
+
+  
 
   proceed(){
    // this.b = new BuyerModel();
