@@ -1,1 +1,29 @@
-<p>calculate works!</p>
+<h4>Premium Amount</h4>
+<table class="table table-bordered table-striped">
+    <thead style="text-align: center;">
+        <tr>
+            <th>Vehicle Model</th>
+            <th>Insurance Amount</th>
+            <th>Policy Type</th>
+            <th>Premium Amount</th>
+           
+        </tr>
+    </thead>
+    <tbody style="text-align: center;">
+        <tr >
+            <td>{{vehicleModel}}</td>
+            <td>
+                {{insuranceAmount}}
+            </td>
+              <td>
+                  {{policyType}}
+              </td >
+            <td > 
+                <button type="button" class="btn btn-success btn-lg">{{premiumAmount|currency:'INR':'symbol'}}</button>
+            </td>
+            
+                
+        </tr>
+        
+        </tbody>
+</table>

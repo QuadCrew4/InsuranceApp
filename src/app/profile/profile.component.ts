@@ -19,4 +19,8 @@ export class ProfileComponent implements OnInit {
   history(){
     this.router.navigate(['claimhistory']);
   }
+  buy(){
+    this.router.navigate(['calculate']);
+  }
+
 }

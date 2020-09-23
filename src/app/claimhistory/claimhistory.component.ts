@@ -11,15 +11,16 @@ import { InsuranceService } from '../services/insurance.service';
   styleUrls: ['./claimhistory.component.css']
 })
 export class ClaimhistoryComponent implements OnInit {
-list:(ClaimModule|BankDetailsModule)[]=[];
+
   
   claimno:number=101;
   date=new Date();
+  list: (ClaimModule|BankDetailsModule)[]=[];
  
   constructor(private service :InsuranceService,private router:Router) { }
 
   ngOnInit() {
-    this.list=this.service.getList();
+    //this.list=this.service.getList();
   }
   
 }

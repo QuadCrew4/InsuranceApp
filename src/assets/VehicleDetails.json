@@ -1,0 +1,17 @@
+
+[
+    {
+        "regno":"GJ90WY5789",
+        "vehiclemodel": "Royal Enfield",
+        "price":50000.00,
+        "purchasedate":"01/01/2020",
+        "plan":"Comprehensive"
+    },
+    {
+        "regno":"GJ90WY6000",
+        "vehiclemodel": "Hero Honda",
+        "price":70000.00,
+        "purchasedate":"01/12/2016",
+        "plan":"Third Party"
+    }
+]

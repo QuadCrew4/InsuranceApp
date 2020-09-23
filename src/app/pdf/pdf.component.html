@@ -24,7 +24,7 @@
         <div class='col-sm-6'>
             <label for="firstname"><strong>First Name</strong></label>
             <input class="form-control" name="firstname" [(ngModel)]=address.firstname
-            required pattern="[0-9]{1}" placeholder="Enter Your First Name" #firstname='ngModel'>
+            required pattern="[A-Za-z]{3,}" placeholder="Enter Your First Name" #firstname='ngModel'>
             <span *ngIf="firstname.touched && firstname.invalid" class="alert-danger">Invalid Name</span>
         </div>
         <div class="col-sm-6">

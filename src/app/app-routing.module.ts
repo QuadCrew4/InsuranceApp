@@ -25,6 +25,7 @@ const routes: Routes = [
   {path:'furtherdetails',component:FurtherdetailsComponent},
   {path:'pdf',component:PdfComponent},
   {path:'claimhistory',component:ClaimhistoryComponent},
+  {path:'calculate',component:CalculateComponent},
   {path:'**', redirectTo:'/home', pathMatch:'full'}
 ];
 
