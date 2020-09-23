@@ -2,18 +2,18 @@
     <div class="mainlogin">
       <div class="card">
         <h2>Register to explore amazing career opportunities</h2>
-        <form (ngSubmit)="registerUser()">
+        <form (ngSubmit)="registerUser()" #registerForm="ngForm">
             <div class="container">
               <label for="uname"><b>Username</b></label>
-              <input type="text" [(ngModel)]=username required pattern="[A-Za-z0-9]{4,}" placeholder="Enter Username" name="uname" #un="ngModel">
+              <input type="text" [(ngModel)]=user.username required pattern="[A-Za-z0-9]{4,}" placeholder="Enter Username" name="uname" #un="ngModel">
               <span class="alert-warning" *ngIf="un.touched && un.invalid">Username is invalid</span><br>
           
               <label for="psw"><b>Password</b></label>
-              <input type="password" [(ngModel)]=password placeholder="Enter Password" required pattern="[A-Za-z0-9]{8}" name="psw" #ps="ngModel">
+              <input type="password" [(ngModel)]=user.password placeholder="Enter Password" required pattern="[A-Za-z0-9]{8}" name="psw" #ps="ngModel">
               <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password is invalid</span><br>
 
               <label for="conpsw"><b>Confirm Password</b></label>
-              <input type="password" [(ngModel)]=conpassword placeholder="Confirm Password" required pattern="{{password}}" name="conpsw"  #conps="ngModel">
+              <input type="password" [(ngModel)]=conpassword placeholder="Confirm Password" required pattern="{{user.password}}" name="conpsw"  #conps="ngModel">
               <span class="alert-warning" *ngIf="conps.touched && conps.invalid">Password should be same</span><br>
 
               <label for="dob"><b>Date of Birth &nbsp;&nbsp;</b></label>
@@ -24,14 +24,14 @@
               <span class="alert-warning" *ngIf="em.touched && em.invalid">Email is invalid</span><br>
    
               <label for="city"><b>Address</b></label>
-              <input type="text" [(ngModel)]=address placeholder="Enter Address" required pattern="[A-Za-z0-9]{10,}" name="add" #ad="ngModel">
+              <input type="text" [(ngModel)]=address placeholder="Enter Address" required pattern="[A-Za-z0-9 ]{10,}" name="add" #ad="ngModel">
               <span class="alert-warning" *ngIf="ad.touched && ad.invalid">Address is invalid</span><br>
           
               <label for="mobile"><b>Mobile No.</b></label>
               <input type="tel" [(ngModel)]=mobile placeholder="Enter Mobile Number" required pattern="[0-9]{10}" name="mobile" #mb="ngModel">
               <span class="alert-warning" *ngIf="mb.touched && mb.invalid">Mobile no is invalid</span><br>
 
-              <button type="submit" class="but">Register</button>
+              <button type="submit" class="but" [disabled]="!registerForm.valid">Register</button>
             </div>
           </form>
       </div>
