@@ -15,6 +15,8 @@ import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminComponent } from './admin/admin.component';
 import { CalculateComponent } from './calculate/calculate.component';
+import { BuyComponent } from './buy/buy.component';
+import { PlanComponent } from './plan/plan.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CalculateComponent } from './calculate/calculate.component';
     AboutComponent,
     ProfileComponent,
     AdminComponent,
-    CalculateComponent
+    CalculateComponent,
+    BuyComponent,
+    PlanComponent
   ],
   imports: [
     BrowserModule,

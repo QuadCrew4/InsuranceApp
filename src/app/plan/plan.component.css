@@ -2,12 +2,15 @@
     text-align :center;
     padding: 10px;
     font-size: 20px;
-    text-align: center;
     margin:10px 100px 0px 100px;
 }
-.subbody{
-    text-align: center;
+.planBox{
+    margin-left: 30%;
+    margin-top: 3%;
     font-size: 20px;
-    margin-top: 2%;
-    position: relative;
+}
+.termBox{
+    margin-left: 30%;
+    margin-top: 3%;
+    font-size: 20px;
 }
