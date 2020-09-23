@@ -1,0 +1,68 @@
+<div class="header">
+    <h1>BUY INSURANCE</h1>    
+</div>
+
+<div class="customcls">
+    <img class="image" src="../../assets/images/car.jpg">
+    <img class="image" src="../../assets/images/bike.jpg">
+</div>
+
+<div class="regBox"> 
+    <label for="regno"><b>Registration Number</b></label>
+    
+    <input type="text" placeholder="Eg, JH05AY5721" name="regno" 
+    [(ngModel)]=regno1 #regno='ngModel'>
+</div>
+
+<div class="details">
+<p class="search">
+    <button class="btn btn-primary" type="submit"  (click)="searchNo()" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        SEARCH
+    </button>
+</p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body" style="width: fit-content; margin-left: 35%;">
+        <table class="table table-bordered table stripped">
+            <tbody>
+                <tr>
+                    <td>Manufacturer</td>
+                    <td>{{b.mfr}}</td>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td>{{b.model}}</td>
+                </tr>
+                <tr>
+                    <td>Driving License</td>
+                    <td>{{b.dlicense}}</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>{{b.price}}</td>
+                </tr>
+                <tr>
+                    <td>Purchase Date</td>
+                    <td>{{b.pdate}}</td>
+                </tr>
+                <tr>
+                    <td>Engine number</td>
+                    <td>{{b.engno}}</td>
+                </tr>
+                <tr>
+                    <td>Chasis number</td>
+                    <td>{{b.chno}}</td>
+                </tr>
+
+                
+
+                <button type="button" class="btn btn-success" 
+                style="margin-left: 60%; margin-top: 5px; margin-bottom: 5%;" 
+                (click)="proceed()">PROCEED FOR PLAN</button> 
+              
+    
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+

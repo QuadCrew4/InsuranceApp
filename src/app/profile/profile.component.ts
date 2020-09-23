@@ -20,7 +20,12 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['claimhistory']);
   }
   buy(){
+<<<<<<< HEAD
     this.router.navigate(['calculate']);
   }
 
+=======
+    this.router.navigate(['buy']);
+  }
+>>>>>>> 8b06c0fbfaea0096cfe2c5e3dfd8d09e3c9a17f9
 }

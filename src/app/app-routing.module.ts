@@ -11,8 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
-
-
+import { BuyComponent } from '../app/buy/buy.component';
+import { PlanComponent } from '../app/plan/plan.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
@@ -24,6 +24,8 @@ const routes: Routes = [
   {path:'claim-insurance',component:ClaimInsuranceComponent},
   {path:'furtherdetails',component:FurtherdetailsComponent},
   {path:'pdf',component:PdfComponent},
+  {path:'buy',component:BuyComponent},
+  {path:'plan',component:PlanComponent},
   {path:'claimhistory',component:ClaimhistoryComponent},
   {path:'calculate',component:CalculateComponent},
   {path:'**', redirectTo:'/home', pathMatch:'full'}
