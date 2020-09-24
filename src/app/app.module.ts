@@ -17,6 +17,7 @@ import { AdminComponent } from './admin/admin.component';
 import { CalculateComponent } from './calculate/calculate.component';
 import { BuyComponent } from './buy/buy.component';
 import { PlanComponent } from './plan/plan.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PlanComponent } from './plan/plan.component';
     AdminComponent,
     CalculateComponent,
     BuyComponent,
-    PlanComponent
+    PlanComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

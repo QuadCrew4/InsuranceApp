@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from '../user.model';
+
 
 @Component({
   selector: 'app-simpleform',
@@ -7,7 +7,6 @@ import { UserModel } from '../user.model';
   styleUrls: ['./simpleform.component.css']
 })
 export class SimpleformComponent implements OnInit {
-  user = new UserModel;
 
   constructor() { }
 
