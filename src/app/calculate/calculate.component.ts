@@ -20,12 +20,4 @@ export class CalculateComponent implements OnInit {
      this.policyType=this.service.policyType();
      this.premiumAmount=this.service.plan();
   }
-
-  pay(){
-    alert("payment successful");
-    this.router.navigate(['profile']);
-  }
-  
-  
-
 }

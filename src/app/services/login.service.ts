@@ -8,10 +8,12 @@ import { User } from '../user.model';
 export class LoginService {
   users: User[] =[];
   constructor(private router: Router) { }
+
   registerUser(user: User)
   {
     this.users.push(user);
   }
+  
   loginCheck(uname: String, psw: String, role: String)
   {
     let result1 = this.users.find(x => x.username == uname);

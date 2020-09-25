@@ -1,24 +1,47 @@
-<div class="header">
-    <h1>CHOOSE POLICY PLANS</h1>    
+
+
+<div class="card" style="max-width: 100%;">
+    <div class="row no-gutters">
+        <div class="col-sm-6" style="background: #868e96; ">
+            <img src="../../assets/images/plan.jpg" class="card-img-top h-100" style="opacity: 0.8;">
+        </div>
+        <div class="col-sm-5">
+            <div class="card-body">
+                <h2 class="card-title">CHOOSE POLICY PLANS</h2>
+                
+                
+                <br>
+                <br>
+                <div class="planBox">
+                    <label for="plan">Choose plan</label>&nbsp;
+                    <select name="plan" [(ngModel)]=p.plan #plan='ngModel'>
+                        <option *ngFor = 'let pl of plans' [value]="pl">{{pl}} </option>
+                    </select>
+                </div> 
+                
+                <div class="termBox">
+                    <label for="term">Choose year</label>&nbsp;
+                    <select name="term" [(ngModel)]=p.term #term='ngModel'>
+                        <option *ngFor = 'let y of years' [value]="y">{{y}} year</option>
+                    </select>
+                </div> 
+                <br>
+                
+                
+                <br>
+                
+                
+                
+                <button type="button" class="btn btn-warning" (click)="quote()"
+                    style="margin-left: 34%;"><b>SHOW QUOTE</b></button>
+
+                <button type="button" class="btn btn-success" style="margin-left: 34%;margin-top: 5%;"
+                    (click)="pay()">PROCEED FOR PAYMENT</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="planBox">
-    <label for="plan" style="font-size: 35px;">Choose plan</label>&nbsp;
-    <select name="plan" [(ngModel)]=p.plan #plan='ngModel'>
-        <option *ngFor = 'let pl of plans' [value]="pl">{{pl}} </option>
-    </select>
-</div> 
-
-<div class="termBox">
-    <label for="term" style="font-size: 35px;">Choose year</label>&nbsp;
-    <select name="term" [(ngModel)]=p.term #term='ngModel'>
-        <option *ngFor = 'let y of years' [value]="y">{{y}} year</option>
-    </select>
-</div> 
-<br>
 
 
-<br>
-<button type="button" class="btn btn-warning" style="margin: 5% 30% 5% 43%; font-size: 30px;" 
-(click)="quote()"> SHOW QUOTE </button> 
-
+   
