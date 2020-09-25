@@ -1,36 +1,37 @@
 h2{
-    background-color:white;
-    padding: 30px;
-  }
+  background-color:white;
+  padding: 30px;
+}
 /* Styles for About Us */
 .columnimg {
-    float: left;
-    width: 25%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-  
-  .cardimg {
-    margin: 8px;
-  }
-  
-  .about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #474e5d;
-    color: white;
-  }
-  
-  .containerimg {
-    padding: 0 16px;
-  }
-  
-  .containerimg::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
-    color: grey;
-  }
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.cardimg {
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.containerimg {
+  padding: 0 16px;
+  color: black;
+}
+
+.containerimg::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
