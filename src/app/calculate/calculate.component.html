@@ -1,32 +1,74 @@
-<h4>Premium Amount</h4>
-<table class="table table-bordered table-striped">
-    <thead style="text-align: center;">
-        <tr>
-            <th>Vehicle Model</th>
-            <th>Insurance Amount</th>
-            <th>Policy Type</th>
-            <th>Premium Amount</th>
-           
-        </tr>
-    </thead>
-    <tbody style="text-align: center;">
-        <tr >
-            <td>{{vehicleModel}}</td>
-            <td>
-                {{insuranceAmount}}
-            </td>
-              <td>
-                  {{policyType}}
-              </td >
-            <td > 
-                <button type="button" class="btn btn-success btn-lg">{{premiumAmount|currency:'INR':'symbol'}}</button>
-            </td>
-            
-                
-        </tr>
-        
-    </tbody>
-</table>
 
-<button type="button" class="btn btn-success" style="margin: 0% 30% 2% 40%; font-size: 25px;"
-(click)="pay()">PROCEED FOR PAYMENT</button>
+	
+		<div class="wrapper">
+            <form  id="wizard" style="width: 90%; padding-left:100px; padding-right: 100px;">
+        		<!-- SECTION 1 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="../../assets/images2/2.jpg" alt="">
+						</div>
+						<div class="form-content" >
+							<div class="form-header">
+								<h3>Calculate Premium</h3>
+							</div>
+							
+								
+								<div class="form-holder">
+									
+									<input required name="vehicleno" [(ngModel)]=vehicleno  placeholder="Vehicle No" class="form-control">
+								</div>
+								
+						
+							
+								<div class="form-holder">
+									
+									<select name="plan" [(ngModel)]=plan>
+										<option [value]="Choose" selected>Choose Plan Type</option>
+										<option value="thirdparty">Thirdparty</option>
+										<option value="Comprehensive">Comprehensive</option>
+										
+									</select>
+								</div>
+								
+							
+								<div class="form-holder">
+									<select name="age" [(ngModel)]="age">
+										<option [value]="vehicleage"  selected>Vehicle age</option>
+										<option value="6 months">Less than 6 months</option>
+										<option value="one year">One Year</option>
+										<option value="two years">Two Years</option>
+										<option value="three years">Three Years</option>
+										<option value="more than 5">More than 5 Years</option>
+										
+									</select>
+								</div>
+			
+                
+							<div class="but">
+							<button class="btn btn-success btn-lg" type="submit"
+							data-toggle="collapse" data-target="#collapseExample" 
+							aria-expanded="false" aria-controls="collapseExample" (click)="CalculatePremium()">Calculate</button>
+							<div class="collapse" id="collapseExample">
+								<div style="padding-left: 120px;">
+									<label style="padding-top: 20px; font-size: 18px;">IDV: {{insuranceAmount|currency:'INR':'symbol':'1.2-2'}}</label><br>
+
+									<label style="padding-top: 10px; font-size: 18px; ">Premium Amount: {{premiumAmount|currency:'INR':'symbol':'1.2-2'}}</label>
+												
+								</div>
+							  </div>
+						</div>
+						</div>
+						
+          </div>
+          
+                </section>
+
+				
+            </form>
+		</div>
+
+		
+  
+

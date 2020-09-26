@@ -39,14 +39,14 @@
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-            <input type="password" class="form-control" [(ngModel)]=user.password placeholder="Password" required pattern="[A-Za-z0-9]{8}" #ps="ngModel" [ngModelOptions] = "{standalone: true}">
+            <input type="password" class="form-control" [(ngModel)]=user.password placeholder="Password (Should be 8 charcters long)" required pattern="[A-Za-z0-9]{8}" #ps="ngModel" [ngModelOptions] = "{standalone: true}">
             <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-key"> </i></span>
-            <input type="password" class="form-control" [(ngModel)]=conpassword placeholder="Confirm Password" required pattern="{{user.password}}" #conps="ngModel" [ngModelOptions] = "{standalone: true}">
+            <input type="password" class="form-control" [(ngModel)]=conpassword placeholder="Confirm Password (Should be 8 charcters long)" required pattern="{{user.password}}" #conps="ngModel" [ngModelOptions] = "{standalone: true}">
             <span class="alert-warning" *ngIf="conps.touched && conps.invalid">Password should be same</span>
           </div>
         </div>

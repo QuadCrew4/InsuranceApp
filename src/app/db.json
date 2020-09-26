@@ -1,0 +1,30 @@
+{
+
+    "users":[
+        {
+            "Policy no.":88402329,
+            "Vehicle no.":"JH05AY5721",
+            "mfr": "SEEMA SHARMA",
+            "model": "HONDA SHINE",
+            "Claim Amount":20000 
+        },
+        {
+            "Policy no.":88817944,
+            "Vehicle no.": "BH90WY5721",
+            "mfr": "SEEMA SHARMA",
+            "model": "HONDA SHINE",
+            "Claim Amount":10000 
+        },
+
+        {
+            "Policy no.":33531234,
+            "Vehicle no.": "GJ90WY5789",
+            "mfr": "RIYA SHARMA",
+            "model": "ROYAL ENFIELD",
+            "Claim Amount":30000
+           
+        }
+    
+    ]
+
+}

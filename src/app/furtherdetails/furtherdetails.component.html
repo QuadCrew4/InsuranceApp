@@ -1,9 +1,9 @@
 <h3>Claim Insurance</h3>
-<div class="jumbotron" style="background-color:#ECF0F1 ">
+<div class="sai" >
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h4 style="text-align: center;"><u>Step 3</u></h4>
+                <h4 style="text-align: center; padding-top: 10px;"><u>Step 3</u></h4>
 
 		<form [formGroup]="bankDetailsForm" (ngSubmit)="submitClaim()">
 			<div class="form-group">
@@ -69,8 +69,9 @@
 				</div>
             </div>
 			
-
+			<div style="padding-bottom: 25px;">
 			<button class="form-control btn btn-primary btn-success" [disabled]="!bankDetailsForm.valid">Submit</button>
+		</div>
 		</form>
 	</div>
 </div>

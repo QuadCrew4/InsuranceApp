@@ -1,44 +1,82 @@
-<div class="row">
-    <div class="columnimg1">
-      <div class="cardimg">
-        <img src="../../assets/profile.png" alt="Jane" style="width:100%">
-        <div class="containerimg1">
-          <p><button class="buttonimg1">Profile</button></p>
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Jumbotron Header -->
+  <header class="jumbotron my-4">
+    <h1 class="display-3">A Warm Welcome!</h1>
+    <p class="lead">Its good to see you again</p>
+  </header>
+
+  <!-- Page Features -->
+  <div class="row text-center">
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="../../assets/profile.png" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Profile</h4>
+          <p class="card-text" style="color: black;"><b>Check out Your Profile</b></p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary">Click Here!</a>
         </div>
       </div>
     </div>
-  
-    <div class="columnimg1">
-      <div class="cardimg1">
-        <img src="../../assets/buy.png" alt="Mike" style="width:100%">
-        <div class="containerimg1">
-          <p><button class="buttonimg1" (click)="buy()">Buy Insurance</button></p>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="../../assets/buy.jpg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Buy Insurance</h4>
+          <p class="card-text" style="color: black;"><b>Buy your perfect vehicle insurance</b></p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary" (click)="buy()">Click Here!</a>
         </div>
       </div>
     </div>
-    
-    <div class="columnimg1">
-      <div class="cardimg1">
-        <img src="../../assets/renew.png" alt="John" style="width:100%">
-        <div class="containerimg1">
-          <p><button class="buttonimg1">Renew Insurance</button></p>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="../../assets/claim.jpg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Claim Insurance</h4>
+          <p class="card-text" style="color: black;"><b>Claim your insurance</b></p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary" (click)="claim()">Click Here!</a>
         </div>
       </div>
     </div>
-    <div class="columnimg1">
-        <div class="cardimg1">
-          <img src="../../assets/claim.png" alt="John" style="width:100%">
-          <div class="containerimg1">
-            <p><button class="buttonimg1" (click)="claim()">Claim Insurance</button></p>
-          </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="../../assets/renew.jpg" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Renew Insurance</h4>
+          <p class="card-text" style="color: black;"><b>Expiry date nearby, renew in just a few clicks</b></p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">Click Here!</a>
         </div>
       </div>
-      <div class="columnimg1">
-        <div class="cardimg1">
-          <img src="../../assets/history.png" alt="John" style="width:100%">
-          <div class="containerimg1">
-            <p><button class="buttonimg1" (click)="history()">Claim History</button></p>
-          </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100">
+        <img class="card-img-top" src="../../assets/history.png" alt="">
+        <div class="card-body">
+          <h4 class="card-title">Claim History</h4>
+          <p class="card-text" style="color: black;"><b>Check out your claim history</b></p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary" (click)="history()">Click Here!</a>
         </div>
       </div>
+    </div>
+
   </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
