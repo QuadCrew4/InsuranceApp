@@ -10,12 +10,14 @@ import {Router} from '@angular/router';
 export class PlanComponent implements OnInit {
 
   p = new PlanModel;
-  years: string[];
+  years: number[];
   plans:string[];
+  plan: string;
+  year:number;
   
 
   constructor(private router : Router) { 
-    this.years = ['1','2','3']
+    this.years = [1,2,3]
     this.plans = ['third party policy' , 'comprehensive policy']
   }
 
@@ -23,7 +25,12 @@ export class PlanComponent implements OnInit {
   }
 
   quote(){
+    
     this.router.navigate(['calculate']);
   }
 
+  pay(){
+    alert("payment successful");
+    this.router.navigate(['profile']);
+  }
 }

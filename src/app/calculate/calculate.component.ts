@@ -23,6 +23,7 @@ export class CalculateComponent implements OnInit {
     
      
   }
+<<<<<<< HEAD
   CalculatePremium()
   { this.service.Age(this.age);
     this.insuranceAmount=this.service.Calculate(this.vehicleno);
@@ -36,4 +37,6 @@ export class CalculateComponent implements OnInit {
   
   
 
+=======
+>>>>>>> 2ca73801ced1af5b9d557e864a77567da05a6b90
 }
