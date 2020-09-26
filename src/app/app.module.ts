@@ -18,6 +18,7 @@ import { CalculateComponent } from './calculate/calculate.component';
 import { BuyComponent } from './buy/buy.component';
 import { PlanComponent } from './plan/plan.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RenewalComponent } from './renewal/renewal.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CalculateComponent,
     BuyComponent,
     PlanComponent,
-    DashboardComponent
+    DashboardComponent,
+    RenewalComponent
   ],
   imports: [
     BrowserModule,

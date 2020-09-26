@@ -12,9 +12,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   }
-  renew() {
-    this.router.navigate(['renew insurance']);
-  }
   claim()
   {
     this.router.navigate(['claim-insurance']);
@@ -24,5 +21,8 @@ export class ProfileComponent implements OnInit {
   }
   buy(){
     this.router.navigate(['buy']);
+  }
+  renew(){
+    this.router.navigate(['renewal']);
   }
 }

@@ -32,7 +32,7 @@
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"> </i></span>
-            <input type="text" class="form-control" [(ngModel)]=address  placeholder="Address" required pattern="[A-Za-z0-9 ]{10,}" #ad="ngModel" [ngModelOptions] = "{standalone: true}">
+            <input type="text" class="form-control" [(ngModel)]=address  placeholder="Address" required pattern="[A-Za-z0-9 ,-]{10,}" #ad="ngModel" [ngModelOptions] = "{standalone: true}">
             <span class="alert-warning" *ngIf="ad.touched && ad.invalid">Address is invalid</span>
           </div>
         </div>

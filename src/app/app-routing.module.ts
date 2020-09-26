@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { BuyComponent } from '../app/buy/buy.component';
 import { PlanComponent } from '../app/plan/plan.component';
+import { RenewalComponent } from './renewal/renewal.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'plan',component:PlanComponent},
   {path:'claimhistory',component:ClaimhistoryComponent},
   {path:'calculate',component:CalculateComponent},
+  {path:'renewal',component:RenewalComponent},
   {path:'**', redirectTo:'/home', pathMatch:'full'}
 ];
 
