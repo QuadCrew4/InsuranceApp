@@ -25,4 +25,7 @@ export class ProfileComponent implements OnInit {
   renew(){
     this.router.navigate(['renewal']);
   }
+  profile(){
+    this.router.navigate(['profilecard']);
+  }
 }

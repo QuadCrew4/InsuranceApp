@@ -30,7 +30,7 @@ export class PlanComponent implements OnInit {
   }
 
   pay(){
-    alert("payment successful");
+    alert("Congratulations, your payment is successful.");
     this.router.navigate(['profile']);
   }
 }

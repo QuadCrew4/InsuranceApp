@@ -19,7 +19,7 @@ import { BuyComponent } from './buy/buy.component';
 import { PlanComponent } from './plan/plan.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RenewalComponent } from './renewal/renewal.component';
-
+import { ProfilecardComponent } from './profilecard/profilecard.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { RenewalComponent } from './renewal/renewal.component';
     BuyComponent,
     PlanComponent,
     DashboardComponent,
-    RenewalComponent
+    RenewalComponent,
+    ProfilecardComponent
   ],
   imports: [
     BrowserModule,
