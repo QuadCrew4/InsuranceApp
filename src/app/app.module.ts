@@ -20,6 +20,7 @@ import { PlanComponent } from './plan/plan.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RenewalComponent } from './renewal/renewal.component';
 import { ProfilecardComponent } from './profilecard/profilecard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ProfilecardComponent } from './profilecard/profilecard.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule ],
   providers: [],
   bootstrap: [AppComponent]

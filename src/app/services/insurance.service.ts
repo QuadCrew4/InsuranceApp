@@ -5,8 +5,16 @@ import { BankDetailsModule } from '../BankDetails.model';
 import { ClaimModule } from '../Claim.model';
 import * as VehicleDetails from '../../assets/VehicleDetails.json';
 import { Calculate } from 'src/Calculate.Model';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+interface res{
+    regno:string;
+    vehiclemodel:string;
+    price:number;
+    purchasedate:string;
+    plan:string;
 
+}
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +23,30 @@ export class InsuranceService {
  
   public insurancePrice=12000;
 
+  
   claimList:ClaimModule[]=[];
   addressDetails:AddressModule[]=[];
   bankDetails:BankDetailsModule[]=[];
   calculateList:any = (VehicleDetails as any).default;
  
+results:res;
+items=[];
+  constructor(private http:HttpClient) {
+    this.http.get("assets/VehicleDetails.json").toPromise().then
+    (
+      data=>{
+        console.log(data);
+        for(let key in data)
+        {
+          if(data.hasOwnProperty(key))
+          this.items.push(data[key]);
+          console.log(this.items);
+        }
+      }
+    );
+   }
 
 
-  constructor() { }
   saveClaim(claim:ClaimModule)
   {
     this.claimList.push(claim);
@@ -65,48 +89,22 @@ Age(age:string)
 }
 
    Calculate(vehicleno:string){
-    
    
-  
-
-    
-      if(VehicleDetails[0].regno==vehicleno){
-     var vehicleprice=VehicleDetails[0].price;
+    for(let i=0;i<this.items.length;i++){
+      if(this.items[i].regno==vehicleno){
+     var vehicleprice=this.items[i].price;
     
     var d=parseInt(vehicleprice);
-    //  var buydate=VehicleDetails[i].purchasedate;
-    //  let newbuydate=new Date(buydate);
-    //  var today=new Date();
-    //  var yearDifference;var monthDifference;var noDifference;
-     
-    //  if(today.getFullYear()==newbuydate.getFullYear())
-    //  {
-    //    if(today.getMonth()==newbuydate.getMonth())
-    //    {
-    //      noDifference= 0;
-    //      insurancePrice=vehicleprice;
-    //    }
-    //    else
-    //    {monthDifference =today.getMonth()-newbuydate.getMonth();
-    //     insurancePrice=vehicleprice-((monthDifference/12)*vehicleprice*0.05);
-    //    }
-    //  }
-    //  else if(today.getFullYear()!=newbuydate.getFullYear())
-    //  {
-    //    yearDifference= today.getFullYear()-newbuydate.getFullYear();
-    //    insurancePrice=vehicleprice-(yearDifference*0.05*vehicleprice)
-    //  }
-     
-    //  var difference = today.valueOf()-newbuydate.valueOf();
-   
+    
      this.insurancePrice=d-((this.vage)*d*0.05);
     }
      
     
-  return this.insurancePrice;
+  
      
-   }
-   
+  }
+   return this.insurancePrice;
+  }
    plan( plan:string)
   {  var premiumAmount;
     
