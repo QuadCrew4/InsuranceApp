@@ -13,5 +13,27 @@
         "price":70000.00,
         "purchasedate":"01/12/2016",
         "plan":"Third Party"
+    },
+    {
+        "regno":"AB56CD7000",
+        "vehiclemodel": "Pulsar",
+        "price":100000.00,
+        "purchasedate":"01/12/2016",
+        "plan":"Third Party"
+    },
+    {
+        "regno":"DC00CD2000",
+        "vehiclemodel": "KTM",
+        "price":120000.00,
+        "purchasedate":"01/12/2016",
+        "plan":"Third Party"
+    },
+    {
+        "regno":"AP30CD4233",
+        "vehiclemodel": "Gixxer",
+        "price":90000.00,
+        "purchasedate":"01/12/2016",
+        "plan":"Third Party"
     }
+
 ]
