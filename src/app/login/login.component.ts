@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Login } from '../login.model';
 import { LoginService } from '../services/login.service';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +12,30 @@ import { LoginService } from '../services/login.service';
 export class LoginComponent implements OnInit {
 
   role: String;
-  uname: String;
-  psw: String;
-  constructor(private router: Router, private service: LoginService) { }
+  login : Login;
+  user : User;
 
-  ngOnInit() {
+  constructor(private router: Router, private service: LoginService) { 
+    this.login = new Login();
   }
 
-  loginCheck(){
-    this.service.loginCheck(this.uname,this.psw,this.role);
+  ngOnInit() {
+    localStorage.setItem("user",null);
+  }
+  async loggedIn(){
+    await this.service.loginCheck(this.login).then(data => this.user = data);
+    
+    localStorage.setItem("uname",this.user.name);
+   
+    if(this.role =="Admin")
+    {
+      alert('Admin successfully Logged in')
+      this.router.navigate(['admin']);
+    }
+    else
+    {
+      alert('User successfully Logged in')
+      this.router.navigate(['profile']);
+    }
   }
 }
