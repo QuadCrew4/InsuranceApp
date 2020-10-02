@@ -8,13 +8,13 @@
     </div>
 
     <!-- Login Form -->
-    <form (ngSubmit)="loginCheck()" #loginForm="ngForm">
+    <form (ngSubmit)="loggedIn()" #loginForm="ngForm">
 
-      <input type="text" id="login" class="fadeIn second" [(ngModel)]=uname name="username" placeholder="username" required pattern="[A-Za-z0-9]{4,8}" #un="ngModel">
+      <input type="text" id="login" class="fadeIn second" [(ngModel)]=login.username name="username" placeholder="username" required pattern="[A-Za-z0-9]{4,8}" #un="ngModel">
       <span class="alert-warning" *ngIf="un.touched && un.invalid">username is invalid</span>
       
-      <input type="password" id="password" class="fadeIn third" [(ngModel)]=psw name="password" placeholder="password" 
-      required pattern="[A-Za-z0-9]{8}" #psw1="ngModel">
+      <input type="password" id="password" class="fadeIn third" [(ngModel)]=login.password name="password" placeholder="password" 
+      required pattern="[A-Za-z0-9]{4,8}" #psw1="ngModel">
       <span class="alert-warning" *ngIf="psw1.touched && psw1.invalid">password is invalid</span>
       <br>
       <select name="role" [(ngModel)]=role style="width: 40%; background-color: DodgerBlue; padding: 5px; margin: 10px;">
