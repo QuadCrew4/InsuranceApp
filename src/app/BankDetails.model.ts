@@ -1,7 +1,7 @@
 export class BankDetailsModule
 {
-    public claimamount:string;
-    public accountno : String;
+    public phoneno:string;   
+     public accountno : String;
     public confirmaccountno :String;
     public holdername : String;
     

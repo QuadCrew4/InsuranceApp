@@ -8,23 +8,23 @@
     <div class='form-group'>
         <label for="policyno"><strong>Policy No.</strong></label>
         <input class="form-control" name="policyno" [(ngModel)]=claim.policyno
-        required pattern="[0-9]{1}" placeholder="Enter Your Policy Number" #policyno='ngModel'>
+        required pattern="[0-9]{5,}" placeholder="Enter Your Policy Number" #policyno='ngModel'>
         <span *ngIf="policyno.touched && policyno.invalid" class="alert-danger">Invalid Policy Number</span>
     </div>
    
     <div class='form-group'>
         <label for="vehicleno"><strong>Vehicle No.</strong></label>
         <input class="form-control" name="vehicleno" [(ngModel)]=claim.vehicleno
-        required pattern="[0-9]{3,}" placeholder="Enter Your Vehicle Number" #vehicleno='ngModel'>
+        required pattern="[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4,}" placeholder="Enter Your Vehicle Number" #vehicleno='ngModel'>
         <span *ngIf="vehicleno.touched && vehicleno.invalid" class="alert-danger">Invalid Vehicle Number</span>
     </div>
    
 
     <div class="form-group">
-        <label for="phoneno"><b>Phone No.</b></label>
-        <input class="form-control" name="phoneno" [(ngModel)]=claim.phoneno
-        required pattern="[0-9]{10}" placeholder="Enter Your Phone Number" #phoneno='ngModel'>
-        <span *ngIf="phoneno.touched && phoneno.invalid" class="alert-danger">Invalid Phone Number</span>
+        <label for="amount"><b>Claim Amount</b></label>
+        <input class="form-control" name="amount" [(ngModel)]=claim.amount
+        required pattern="[0-9]{3,}" placeholder="Enter Claim Amount" #amount='ngModel'>
+        <span *ngIf="amount.touched && amount.invalid" class="alert-danger">Invalid Amount</span>
     </div>
 
     <div class="form-group">

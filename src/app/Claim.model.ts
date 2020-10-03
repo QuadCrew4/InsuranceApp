@@ -4,12 +4,15 @@ import { BankDetailsModule } from './BankDetails.model';
 
 export class ClaimModule
 {
-    public policyno : String;
-    public vehicleno :String;
-    public phoneno:String;
-    public Reason : String;
+    public policyno : string;
+    public vehicleno :string;
+    
+    public Reason : string;
    
     public address : AddressModule;
-   public bankdetails: BankDetailsModule;
+    public bankdetails: BankDetailsModule;
+    public claimDate:Date;
+    public amount:string;
 
 }
+

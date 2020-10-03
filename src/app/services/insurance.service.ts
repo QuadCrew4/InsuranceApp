@@ -5,16 +5,10 @@ import { BankDetailsModule } from '../BankDetails.model';
 import { ClaimModule } from '../Claim.model';
 import * as VehicleDetails from '../../assets/VehicleDetails.json';
 import { Calculate } from 'src/Calculate.Model';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
+import { Login } from '../login.model';
+import { Observable } from 'rxjs';
 
-interface res{
-    regno:string;
-    vehiclemodel:string;
-    price:number;
-    purchasedate:string;
-    plan:string;
-
-}
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +16,14 @@ interface res{
 export class InsuranceService {
  
   public insurancePrice=12000;
-
+  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
   
   claimList:ClaimModule[]=[];
   addressDetails:AddressModule[]=[];
   bankDetails:BankDetailsModule[]=[];
   calculateList:any = (VehicleDetails as any).default;
  
-results:res;
+
 items=[];
   constructor(private http:HttpClient) {
     this.http.get("assets/VehicleDetails.json").toPromise().then
@@ -49,23 +43,34 @@ items=[];
 
   saveClaim(claim:ClaimModule)
   {
-    this.claimList.push(claim);
+     this.claimList.push(claim);
+      this.http.post(this.baseUrl+"/addclaim",claim).subscribe(data => data = claim);
+     
+     
+     
+    
+     
+    
   }
-  saveBank(bank:BankDetailsModule)
+  
+  saveBank(bank:ClaimModule)
   {
-    this.bankDetails.push(bank);
+     this.claimList.push(bank);
+     var policyNo="ABCD1234";
+     var username="saiteja";
+     var claimId="CL_01403";
+     const params = new HttpParams().append('username',username).append('policyNo',policyNo).append('claimId',claimId);
+     this.http.put(this.baseUrl+"/adduserpolicyclaim",{params : params});
+    // var myJsonString=(JSON.stringify(this.claimList));
+    // console.log(myJsonString);
+    // this.http.post(this.baseUrl+"/addclaim",myJsonString).subscribe(data => data = myJsonString);
   }
-  SaveAddress(address:AddressModule)
+  SaveAddress(address:ClaimModule)
   {
-    this.addressDetails.push(address);
+    this.claimList.push(address);
   }
 
-  getList(){
-  var result= this.claimList.find(x=>x.policyno);
-  var claimamo=this.bankDetails.find(y=>y.claimamount);
-   var array={result,claimamo};
-   return array;
-  }
+  
   public vage;
 Age(age:string)
 {

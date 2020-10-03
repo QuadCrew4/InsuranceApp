@@ -4,7 +4,7 @@
         <div class="col-md-10 mx-auto">
             
                 <h4 style="text-align: center;"><u>Step 2</u></h4>
-<form (ngSubmit)="proceedSecond()">   
+<form (ngSubmit)="proceedSecond()" >   
     <div class="form-group row">
         <div class="col-sm-6">
         <label for="vehicleimage"><b>Upload Vehicle Image</b></label>
@@ -38,13 +38,13 @@
         <div class="col-sm-6">
             <label for="inputAddressLine1"><b>Address</b></label>
             <input type="text" class="form-control" [(ngModel)]=address.street name="inputAddressLine1"
-             placeholder="Street Address"   required pattern="[A-Za-z]{3,}" #street='ngModel' >
+             placeholder="Street Address"   required pattern="[A-Za-z]{5,}" #street='ngModel' >
              <span *ngIf="street.touched && street.invalid" class="alert-danger">Invalid Street Name</span>
         </div>
         <div class="col-sm-6">
             <label for="inputAddressLine2"><b>Address (Line 2)</b></label>
             <input type="text" class="form-control"  [(ngModel)]=address.landmark name="inputAddressLine2"
-            placeholder="Landmark" pattern="[A-Za-z]{3,}" #landmark='ngModel'>
+            placeholder="Landmark" pattern="[A-Za-z]{5,}" #landmark='ngModel'>
             <span *ngIf="landmark.touched && landmark.invalid" class="alert-danger">Invalid Landmark</span>
         </div>
     </div>

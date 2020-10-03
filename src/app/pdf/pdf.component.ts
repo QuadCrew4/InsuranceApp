@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddressModule } from '../Address.model';
+import { ClaimModule } from '../Claim.model';
 
 import { InsuranceService } from '../services/insurance.service';
 
@@ -10,7 +11,7 @@ import { InsuranceService } from '../services/insurance.service';
   styleUrls: ['./pdf.component.css']
 })
 export class PdfComponent implements OnInit {
-  address = new AddressModule;
+  address : ClaimModule;
   constructor(private service:InsuranceService ,private router:Router) { }
 
   ngOnInit() {
@@ -18,7 +19,7 @@ export class PdfComponent implements OnInit {
   proceedSecond() {
  
     this.service.SaveAddress(this.address);
-    this.address=new AddressModule();
+    //this.address=new AddressModule();
     this.router.navigate(['furtherdetails']);  
   }
   onFileSelected(event)
