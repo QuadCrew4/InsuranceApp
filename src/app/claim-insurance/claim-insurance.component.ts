@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ClaimModule } from '../Claim.model';
 import { InsuranceService } from '../services/insurance.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { InsuranceService } from '../services/insurance.service';
 })
 export class ClaimInsuranceComponent implements OnInit {
   
-  claim=new ClaimModule; 
+
   
   
   constructor(private service:InsuranceService ,private router:Router) {
@@ -24,8 +23,8 @@ export class ClaimInsuranceComponent implements OnInit {
   }
   proceedNext() {
  
-    this.service.saveClaim(this.claim);
-    this.claim=new ClaimModule();
+    // this.service.saveClaim(this.claim);
+    // this.claim=new ClaimModule();
     this.router.navigate(['pdf']);  
   }
   

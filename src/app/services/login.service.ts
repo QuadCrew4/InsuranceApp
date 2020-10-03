@@ -12,6 +12,11 @@ export class LoginService {
   users: User;
   constructor(private router: Router, private http: HttpClient) { }
 
+  getUsers()
+  {
+    return this.http.get<User[]>(this.baseUrl+"/list");
+  }
+
   registerUser(user: User)
   {
     this.http.post(this.baseUrl+"/register",user).subscribe(data => data = user);

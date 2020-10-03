@@ -38,7 +38,7 @@ export class FurtherdetailsComponent implements OnInit {
   currentDate=new Date();
   submitClaim()
   {
-    this.service.saveBank(this.bank);
+    // this.service.saveBank(this.bank);
     this.bank=new BankDetailsModule();
     alert(`
            Claim No:

@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as profile from '../../assets/profile.json';
+import { Policy } from '../policy.model';
 import { profileModel } from "../profile.model";
 
 @Injectable({
@@ -8,15 +10,12 @@ import { profileModel } from "../profile.model";
 })
 export class ProfileService {
 
-  users : any = (profile as any).default;
+  private baseUrl: string = "http://localhost:8080/insurance-spring-rest/rest";
 
-  constructor(private router : Router) { }
 
-  searchN(username : string) : profileModel {
-    let result = this.users.find(x => x.username == username);
-    if(result == null)
-      return null;
-    else
-      return result;
+  constructor(private http: HttpClient) { }
+
+  search(uname : string){
+    return this.http.get<Policy[]>(this.baseUrl+"/fetchallpolicies/"+uname);
   }
 }

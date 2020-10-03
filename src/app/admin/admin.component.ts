@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminService } from '../services/admin.service';
+import { LoginService } from '../services/login.service';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-admin',
@@ -7,13 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  list: User[] = [];
+  constructor(private router: Router, private service: LoginService, private admin: AdminService) { }
 
   ngOnInit() {
+    this.service.getUsers().subscribe(data => this.list = data);
   }
 
-  validate(){
-    alert("your ticket is validated");
+  editClaim(index : number){
+    this.admin.edit(index);
   }
-
+  // delete(index : number) {
+  //   var ans = confirm("Are you sure you want to delete?");
+  //   if(ans) {
+  //     this.service.deleteUser(index);
+  //   }
+  // }
+  // editUser(index : number)
+  // {
+  //   this.service.edit(index);
+  // }
 }

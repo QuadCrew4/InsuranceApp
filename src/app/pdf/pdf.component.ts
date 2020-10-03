@@ -17,7 +17,7 @@ export class PdfComponent implements OnInit {
   }
   proceedSecond() {
  
-    this.service.SaveAddress(this.address);
+    // this.service.SaveAddress(this.address);
     this.address=new AddressModule();
     this.router.navigate(['furtherdetails']);  
   }
