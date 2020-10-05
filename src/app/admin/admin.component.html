@@ -21,7 +21,7 @@
                             <td *ngIf= "pol.claim != null">{{pol.claim.claimId}}</td>
                             <td *ngIf= "pol.claim != null">{{pol.claim.status}}</td>
                             <td>
-                                <button class="btn btn-success" (click)="editClaim(user.username)">Edit</button></td>
+                                <button class="btn btn-success" (click)="editClaim(pol.policyNo)">Edit</button></td>
                         </tr>
                     </tbody>
                 </table>

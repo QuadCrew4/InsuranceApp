@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Policy } from '../policy.model';
 import { AdminService } from '../services/admin.service';
 import { User } from '../user.model';
 
@@ -11,19 +12,19 @@ import { User } from '../user.model';
 })
 export class EditclaimComponent implements OnInit {
 
-  user : User;
+  policy : Policy;
   constructor(private service: AdminService, private router: Router, private route: ActivatedRoute, private http: HttpClient) { 
-    this.user = new User();
+    this.policy = new Policy();
   }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-        this.service.findByIndex(params['index']).subscribe(data => this.user = data);
+        this.service.findByIndex(params['index']).subscribe(data => this.policy = data);
       });
   }
   updateClaim()
   {
-    this.service.update(this.user);
+    this.service.update(this.policy);
     this.router.navigate(['admin']);
   }
 

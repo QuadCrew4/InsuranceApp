@@ -19,7 +19,7 @@
           bankDetailsForm:FormGroup;
           username:string;
           user: User;
-          policyNo:number;
+          policyNo:string;
           
 
 
@@ -52,7 +52,7 @@
           this.bank.vehicleimage=localStorage.getItem("vehicleimage");
         
           localStorage.setItem("accountno",this.bank.accountno);
-        this.policyNo=13;
+          this.policyNo=localStorage.getItem("policyNo");
         
           this.insser.saveBank(this.username,this.policyNo,this.bank);
         
@@ -61,7 +61,7 @@
             alert(`
                   Claimed Succesfully
                     `);
-            //this.router.navigate(['claimhistory']);
+            this.router.navigate(['claimhistory']);
 
           
           

@@ -26,7 +26,7 @@
             find(regNo: string): Observable<Vehicle>{
               return this.http.get<Vehicle>(this.baseUrl+"/fetchvehicle/"+regNo);
             }
-            saveBank(username:string,policyNo:number,bank:ClaimInsurance)
+            saveBank(username:string,policyNo:string,bank:ClaimInsurance)
             {
               this.http.post(this.baseUrl+"/addclaim/"+username+","+policyNo,bank).subscribe(data => data = bank);
             }

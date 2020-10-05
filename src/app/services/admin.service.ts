@@ -19,14 +19,14 @@ export class AdminService {
   }
 
 
-  findByIndex(index : string): Observable<User>
+  findByIndex(index : string): Observable<Policy>
     {
-     return this.http.get<User>(this.baseUrl+"/fetch/"+index);
+     return this.http.get<Policy>(this.baseUrl+"/fetchpolicy/"+index);
     }
 
-  update(user : User)
+  update(policy : Policy)
    {
-    this.http.put(this.baseUrl + "/edituser",user).subscribe(data => data = user);
+    this.http.put(this.baseUrl + "/editpolicy",policy).subscribe(data => data = policy);
    }
 
   edit(index: number)

@@ -5,11 +5,11 @@
             </thead>
             <tbody>
                 <tr><td>Amount</td>
-                    <td><input name="empid" [(ngModel)]=user.policies[0].claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
+                    <td><input name="empid" [(ngModel)]=policy.claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
                     <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount</span></td>
                 </tr>
                 <tr><td>Status</td>
-                    <td><input name="ename" [(ngModel)]=user.policies[0].claim.status required pattern="[A-Za-z]{3,}" placeholder="Enter Status" #ename="ngModel">
+                    <td><input name="ename" [(ngModel)]=policy.claim.status required pattern="[A-Za-z]{3,}" placeholder="Enter Status" #ename="ngModel">
                         <span class="alert-warning" *ngIf="ename.touched && ename.invalid">Status is invalid</span>
                     </td>
                 </tr>
