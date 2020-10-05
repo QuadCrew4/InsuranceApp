@@ -1,60 +1,36 @@
- 
-<head>
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-</head>
-<body>
-   
-<div class="container" style="padding-left:40px; padding-top: 20px;">
-	
-		
-            <table class="table table-bordered" >
-                <thead>
-                    <tr>
-                        <th colspan="4" ><h3>Claim History</h3></th>
-                    </tr>
-                    <tr>
-                        <th>Claim No.</th>
-                        <th>Policy No.</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>  
-              <tbody>
-                <tr class="table-success">
-                    <td>1234</td>
-                    <td>AB1234</td>
-                    <td>2012/05/06</td>
-                    <td><span class="label label-success">Success</span>
-                    </td>                                       
-                </tr>
-                <tr class="table-danger">
-                    <td>1236</td>
-                    <td>BC2345</td>
-                    <td>2011/12/01</td>
-                    <td><span class="label label-important">Rejected</span></td>                                       
-                </tr>
-                <tr class="table-warning">
-                    <td>3456</td>
-                    <td>CD3241</td>
-                    <td>2010/08/21</td>
-                    <td><span class="label label-warning">Pending</span></td>                                        
-                </tr>
-                <tr class="table-warning">
-                    <td>4567</td>
-                    <td>DF1234</td>
-                    <td>2009/04/11</td>
-                    <td><span class="label label-warning">Pending</span></td>                                       
-                </tr>
-                <tr class="table-success">
-                    <td>3245</td>
-                    <td>SC2345</td>
-                    <td>2007/02/01</td>
-                    <td><span class="label label-success">Success</span></td>                                        
-                </tr>                                   
-              </tbody>
-            </table>
-            </div>
-</body>
+    
+    <head>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        </head>
+        <body>
+        
+        <div class="container" style="padding-left:40px; padding-top: 20px;">
+            
+                
+                    <table class="table table-bordered" >
+                        <thead>
+                            <tr>
+                                <th colspan="4" ><h3>Claim History</h3></th>
+                            </tr>
+                            <tr>
+                                <th>Claim No.</th>
+                                <th>Policy No.</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>  
+                    <tbody>
+                        <tr class="table-success">
+                            <td>{{user.policies[0].Claim.claimId}}</td>
+                            <td>{{user.policies[0].policyNo}}</td>
+                            <td>{{user.policies[0].Claim.claimDate}}</td>
+                            <td>{{user.policies[0].Claim.status}}
+                            </td>                                       
+                        </tr>                                
+                    </tbody>
+                    </table>
+                    </div>
+        </body>

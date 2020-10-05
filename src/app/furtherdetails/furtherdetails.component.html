@@ -1,79 +1,80 @@
-<h3>Claim Insurance</h3>
-<div class="sai" >
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <h4 style="text-align: center; padding-top: 10px;"><u>Step 3</u></h4>
+	<h3>Claim Insurance</h3>
+	<div class="sai" >
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<h4 style="text-align: center; padding-top: 10px;"><u>Step 3</u></h4>
 
-		<form [formGroup]="bankDetailsForm" (ngSubmit)="submitClaim()">
-			<div class="form-group">
-				<label for="phoneno"><b>Phone Number</b></label>
-				<input type="text"
-				formControlName="phoneno"
-				class="form-control" 
-				[ngClass]="{'is-invalid':bankDetailsForm.get('phoneno').errors && bankDetailsForm.get('phoneno').touched}"
-				id="phoneno" [(ngModel)]=bank.phoneno
-				placeholder="Enter Your Phone Number">
-				<div class="invalid-feedback" *ngIf="bankDetailsForm.get('phoneno').hasError('pattern')">
-					Invalid Number
-				</div>
-            </div>
-            <div class="form-group">
-				<label for="accountno"><b>Account Number</b></label>
-				<input type="password"
-				formControlName="accountno"
-				class="form-control"
-				[ngClass]="{'is-invalid':bankDetailsForm.get('accountno').errors && bankDetailsForm.get('accountno').touched}"
-				id="accountno" [(ngModel)]=bank.accountno
-				placeholder="Enter Account Number">
-				<div class="invalid-feedback" *ngIf="bankDetailsForm.get('accountno').hasError('pattern')">
-					Invalid Account Number
-				</div>
-            </div>
-			<div class="form-group">
-				<label for="confirmaccountno"><b>Confirm Account Number</b></label>
-				<input type="text"
-				formControlName="confirmaccountno"
-				class="form-control"
-				[ngClass]="{'is-invalid':bankDetailsForm.get('confirmaccountno').errors && bankDetailsForm.get('confirmaccountno').touched}"
-				id="confirmaccountno" [(ngModel)]=bank.confirmaccountno
-				placeholder="Re-Enter Account Number">
-				<div class="invalid-feedback" *ngIf="bankDetailsForm.get('confirmaccountno').hasError('accountnoMismatch')">
-					Account Number Doesn't Match
-				</div>
-            </div>
-            
-            <div class="form-group">
-				<label for="holdername"><b>Holder Name</b></label>
-				<input type="text"
-				formControlName="holdername"
-				class="form-control"
-				[ngClass]="{'is-invalid':bankDetailsForm.get('holdername').errors && bankDetailsForm.get('holdername').touched}"
-				id="holdername" [(ngModel)]=bank.holdername
-				placeholder="Enter Holder Name">
-				<div class="invalid-feedback" *ngIf="bankDetailsForm.get('holdername').hasError('pattern')">
-					Invalid Name
-				</div>
-            </div>
-
-			<div class="form-group">
-				<label for="IFSCcode"><b>IFSC Code</b></label>
-				<input type="text"
-				formControlName="IFSCcode"
-				class="form-control"
-				[ngClass]="{'is-invalid':bankDetailsForm.get('IFSCcode').errors && bankDetailsForm.get('IFSCcode').touched}"
-				id="IFSCcode" [(ngModel)]=bank.IFSCcode
-				placeholder="Enter IFSC Code">
-				<div class="invalid-feedback" *ngIf="bankDetailsForm.get('IFSCcode').hasError('pattern')">
-					Invalid IFSC
-				</div>
-            </div>
+			<form [formGroup]="bankDetailsForm" (ngSubmit)="submitClaim()">
 			
-			<div style="padding-bottom: 25px;">
-			<button class="form-control btn btn-primary btn-success" [disabled]="!bankDetailsForm.valid">Submit</button>
+				<div class="form-group">
+					<label for="phoneno"><b>Phone Number</b></label>
+					<input 
+					formControlName="phoneno"
+					class="form-control"
+					[ngClass]="{'is-invalid':bankDetailsForm.get('phoneno').errors && bankDetailsForm.get('phoneno').touched}"
+					id="phoneno" [(ngModel)]=bank.phoneno
+					placeholder="Enter Phone Number">
+					<div class="invalid-feedback" *ngIf="bankDetailsForm.get('phoneno').hasError('pattern')">
+						Invalid Phone Number
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="accountno"><b>Account Number</b></label>
+					<input type="password"
+					formControlName="accountno"
+					class="form-control"
+					[ngClass]="{'is-invalid':bankDetailsForm.get('accountno').errors && bankDetailsForm.get('accountno').touched}"
+					id="accountno" [(ngModel)]=bank.accountno
+					placeholder="Enter Account Number">
+					<div class="invalid-feedback" *ngIf="bankDetailsForm.get('accountno').hasError('pattern')">
+						Invalid Account Number
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="confirmaccountno"><b>Confirm Account Number</b></label>
+					<input type="text"
+					formControlName="confirmaccountno"
+					class="form-control"
+					[ngClass]="{'is-invalid':bankDetailsForm.get('confirmaccountno').errors && bankDetailsForm.get('confirmaccountno').touched}"
+					id="confirmaccountno" [(ngModel)]=bank.confirmaccountno
+					placeholder="Re-Enter Account Number">
+					<div class="invalid-feedback" *ngIf="bankDetailsForm.get('confirmaccountno').hasError('accountnoMismatch')">
+						Account Number Doesn't Match
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="holdername"><b>Holder Name</b></label>
+					<input type="text"
+					formControlName="holdername"
+					class="form-control"
+					[ngClass]="{'is-invalid':bankDetailsForm.get('holdername').errors && bankDetailsForm.get('holdername').touched}"
+					id="holdername" [(ngModel)]=bank.holdername
+					placeholder="Enter Holder Name">
+					<div class="invalid-feedback" *ngIf="bankDetailsForm.get('holdername').hasError('pattern')">
+						Invalid Name
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="IFSCcode"><b>IFSC Code</b></label>
+					<input type="text"
+					formControlName="IFSCcode"
+					class="form-control"
+					[ngClass]="{'is-invalid':bankDetailsForm.get('IFSCcode').errors && bankDetailsForm.get('IFSCcode').touched}"
+					id="IFSCcode" [(ngModel)]=bank.IFSCcode
+					placeholder="Enter IFSC Code">
+					<div class="invalid-feedback" *ngIf="bankDetailsForm.get('IFSCcode').hasError('pattern')">
+						Invalid IFSC
+					</div>
+				</div>
+				
+				<div style="padding-bottom: 25px;">
+				<button class="form-control btn btn-primary btn-success" [disabled]="!bankDetailsForm.valid">Submit</button>
+			</div>
+			</form>
 		</div>
-		</form>
 	</div>
-</div>
-</div>
-</div>
+	</div>
+	</div>

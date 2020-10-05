@@ -1,3 +1,5 @@
+import { Policy } from './policy.model';
+
 export class User{
     username: string;
     name: string;
@@ -6,4 +8,6 @@ export class User{
     email: string;
     address: string;
     mobile: string;
+
+    policies : Policy[];
 }

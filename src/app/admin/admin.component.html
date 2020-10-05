@@ -1,53 +1,42 @@
-<head>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
-    </head>
-    <body>
-       
-    <div class="container" style="padding-left:40px; padding-top: 20px;">
-        
-            
-                <table class="table table-bordered" >
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h1 class="mt-4">Admin Dashboard</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th colspan="4" ><h3>Claims</h3></th>
-                        </tr>
-                        <tr>
-                            <th>Claim No.</th>
-                            <th>Policy No.</th>
+                            <th>Username</th>
+                            <th>PolicyNo</th>
+                            <th>ClaimNo</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
-                    </thead>  
-                  <tbody>
-                    <tr class="table-success">
-                        <td>1234</td>
-                        <td>AB1234</td>
-                        <td><span class="label label-success">Success</span>
-                        </td>                                       
-                    </tr>
-                    <tr class="table-danger">
-                        <td>1236</td>
-                        <td>BC2345</td>
-                        <td><span class="label label-important">Rejected</span></td>                                       
-                    </tr>
-                    <tr class="table-warning">
-                        <td>3456</td>
-                        <td>CD3241</td>
-                        <td><span class="label label-warning">Pending</span></td>                                        
-                    </tr>
-                    <tr class="table-warning">
-                        <td>4567</td>
-                        <td>DF1234</td>
-                        <td><span class="label label-warning">Pending</span></td>                                       
-                    </tr>
-                    <tr class="table-success">
-                        <td>3245</td>
-                        <td>SC2345</td>
-                        <td><span class="label label-success">Success</span></td>                                        
-                    </tr>                                   
-                  </tbody>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of list">
+                            <td>{{user.username}}</td>
+                            <td>{{user.policies[0].policyNo}}</td>
+                            <td>{{user.policies[0].claim.claimId}}</td>
+                            <td>{{user.policies[0].claim.status}}</td>
+                            <td>
+                                <button class="btn btn-success" (click)="editClaim(user.username)">Edit</button></td>
+                        </tr>
+                    </tbody>
                 </table>
-                </div>
-    </body>
+            </div>
+        </main>
+    </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="assets/demo/chart-area-demo.js"></script>
+<script src="assets/demo/chart-bar-demo.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="assets/demo/datatables-demo.js"></script>
+</body>

@@ -1,13 +1,13 @@
-p {
-    font-family: Lato;
+  p {
+      font-family: Lato;
+    }
+    .error-message {
+      color: red;
+    }
+    input.ng-touched.ng-invalid {
+      border: 1px solid red;
+    }
+  .sai
+  {
+      background-image: url('src/assets/images2/insure2.jpg');
   }
-  .error-message {
-    color: red;
-  }
-  input.ng-touched.ng-invalid {
-    border: 1px solid red;
-  }
-.sai
-{
-    background-image: url('src/assets/images2/insure2.jpg');
-}

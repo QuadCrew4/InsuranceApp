@@ -7,10 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  username: string;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.username= localStorage.getItem("username");
   }
   claim()
   {
