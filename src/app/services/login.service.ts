@@ -4,13 +4,13 @@
   import { Login } from '../login.model';
   import { User } from '../user.model';
 
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class LoginService {
-    private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
-    users: User;
-    constructor(private router: Router, private http: HttpClient) { }
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginService {
+  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+  users: User;
+  constructor(private router: Router, private http: HttpClient) { }
 
     getUsers()
     {

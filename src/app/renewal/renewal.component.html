@@ -4,7 +4,7 @@
             <form class="contact3-form validate-form" (ngSubmit)="renew()" #renewalForm="ngForm">
                 <span class="contact3-form-title">Renewal</span>
                 <div class="wrap-input3 validate-input">
-                    <input class="input3" type="text" [(ngModel)]=policyNo name="policy" placeholder="Policy Number" required pattern="[A-Z0-9]{8}" #pol="ngModel">
+                    <input class="input3" type="text" [(ngModel)]=policyNo name="policy" placeholder="Policy Number" required pattern="[A-Z0-9_]{8}" #pol="ngModel">
                     <span class="focus-input3"></span>
                     <span class="alert-warning" *ngIf="pol.touched && pol.invalid">policy number is invalid</span>
                 </div>

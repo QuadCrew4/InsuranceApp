@@ -14,7 +14,7 @@
                 <br>
                 <div class="planBox">
                     <label for="plan">Choose plan</label>&nbsp;
-                    <select name="plan" [(ngModel)]=p.plan #plan='ngModel'>
+                    <select name="plan" [(ngModel)]=p.type #plan='ngModel'>
                         <option *ngFor = 'let pl of plans' [value]="pl">{{pl}} </option>
                     </select>
                 </div> 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
     import { AddressModule } from './Address.model';
     import { BankDetailsModule } from './BankDetails.model';
@@ -31,3 +32,12 @@
         public postalcode :string;
     }
 
+=======
+export class Claim{
+    claimId : number;
+    amount : number;
+    status : string;
+    claimDate : string;
+    reason : string;
+}
+>>>>>>> 3490db04e9c65f7160f3eeb272a917fc820a3c74

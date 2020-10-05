@@ -21,7 +21,6 @@ export class ProfilecardComponent implements OnInit {
   ngOnInit() {
 
     // this.policyNo = localStorage.getItem("policyNo");
-
   }
 
   searchName(){
