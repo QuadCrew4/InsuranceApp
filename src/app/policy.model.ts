@@ -1,4 +1,6 @@
-import { Claim } from './claim.model';
+
+
+import { ClaimInsurance } from './claim.model';
 import { Vehicle } from './vehicle.model';
 
 export class Policy{
@@ -6,7 +8,6 @@ export class Policy{
     type: string;
     term: number;
     expDate: string;
-
-    claim : Claim;
+    claim : ClaimInsurance;
     vehicle : Vehicle;
 }

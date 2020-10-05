@@ -1,23 +1,23 @@
 
-<form (ngSubmit)="updateClaim()" #editForm="ngForm">
-    <table class="table table-bordered">
-        <thead><tr><th colspan="2">Claim Details</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Amount</td>
-                <td><input name="empid" [(ngModel)]=user.policies[0].claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
-                <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount</span></td>
-            </tr>
-            <tr><td>Status</td>
-                <td><input name="ename" [(ngModel)]=user.policies[0].claim.status required pattern="[A-Za-z]{3,}" placeholder="Enter Status" #ename="ngModel">
-                    <span class="alert-warning" *ngIf="ename.touched && ename.invalid">Status is invalid</span>
-                </td>
-            </tr>
-            <tr>
-                <th colspan="2">
-                    <button class="btn btn-success" type="submit" [disabled]="!editForm.valid">Edit Claim</button>
-                </th>
-            </tr>
-        </tbody>
-    </table>
-</form>
+    <form (ngSubmit)="updateClaim()" #editForm="ngForm">
+        <table class="table table-bordered">
+            <thead><tr><th colspan="2">Claim Details</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Amount</td>
+                    <td><input name="empid" [(ngModel)]=user.policies[0].claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
+                    <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount</span></td>
+                </tr>
+                <tr><td>Status</td>
+                    <td><input name="ename" [(ngModel)]=user.policies[0].claim.status required pattern="[A-Za-z]{3,}" placeholder="Enter Status" #ename="ngModel">
+                        <span class="alert-warning" *ngIf="ename.touched && ename.invalid">Status is invalid</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <button class="btn btn-success" type="submit" [disabled]="!editForm.valid">Edit Claim</button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </form>

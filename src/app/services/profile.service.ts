@@ -15,7 +15,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  search(uname : string){
-    return this.http.get<Policy[]>(this.baseUrl+"/fetchallpolicies/"+uname);
+  search(username : string){
+    return this.http.get<Policy[]>(this.baseUrl+"/fetchallpolicies/"+username);
   }
 }
