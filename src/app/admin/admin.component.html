@@ -18,11 +18,11 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let user of list">
-                            <td>{{user.username}}</td>
-                            <td>{{user.policies[0].policyNo}}</td>
-                            <td>{{user.policies[0].claim.claimId}}</td>
-                            <td>{{user.policies[0].claim.status}}</td>
-                            <td>
+                            <td *ngIf= "user.username != 'admin'">{{user.username}}</td>
+                            <td *ngIf= "user.username != 'admin'">{{user.policies[0].policyNo}}</td>
+                            <td *ngIf= "user.username != 'admin'">{{user.policies[0].claim.claimId}}</td>
+                            <td *ngIf= "user.username != 'admin'">{{user.policies[0].claim.status}}</td>
+                            <td *ngIf= "user.username != 'admin'">
                                 <button class="btn btn-success" (click)="editClaim(user.username)">Edit</button></td>
                         </tr>
                     </tbody>
