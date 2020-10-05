@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Policy } from '../policy.model';
 import { AdminService } from '../services/admin.service';
 import { LoginService } from '../services/login.service';
 import { User } from '../user.model';
@@ -11,11 +12,11 @@ import { User } from '../user.model';
 })
 export class AdminComponent implements OnInit {
 
-  list: User[] = [];
+  policies: Policy[] = [];
   constructor(private router: Router, private service: LoginService, private admin: AdminService) { }
 
   ngOnInit() {
-    this.service.getUsers().subscribe(data => this.list = data);
+    this.admin.getPolicies().subscribe(data => this.policies = data);
   }
 
   editClaim(index : number){
