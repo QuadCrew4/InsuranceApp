@@ -9,7 +9,7 @@ import { User } from '../user.model';
 })
 export class AdminService {
 
-  private baseUrl: string = "http://localhost:8080/insurance-spring-rest/rest";
+  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
 
   constructor(private router : Router, private http : HttpClient) { }
 

@@ -10,7 +10,7 @@ import { profileModel } from "../profile.model";
 })
 export class ProfileService {
 
-  private baseUrl: string = "http://localhost:8080/insurance-spring-rest/rest";
+  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
 
 
   constructor(private http: HttpClient) { }

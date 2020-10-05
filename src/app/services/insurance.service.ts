@@ -7,7 +7,7 @@ import { Vehicle } from '../vehicle.model';
   providedIn: 'root'
 })
 export class InsuranceService {
-  private baseUrl: string = "http://localhost:8080/insurance-spring-rest/rest";
+  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
 
   vehicle = new Vehicle;
 

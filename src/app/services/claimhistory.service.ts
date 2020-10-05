@@ -7,7 +7,7 @@ import { User } from '../user.model';
   providedIn: 'root'
 })
 export class ClaimhistoryService {
-  private baseUrl: string = "http://localhost:8080/insurance-spring-rest/rest";
+  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
   constructor(private http : HttpClient) { }
 
   findUser(username : string): Observable<User>{

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
-import { BuyerModel } from '../buyer.model';
 import { BuyerService} from '../services/buyer.service';
+import { Vehicle } from '../vehicle.model';
 
 @Component({
   selector: 'app-buy',
@@ -10,7 +10,7 @@ import { BuyerService} from '../services/buyer.service';
   styleUrls: ['./buy.component.css']
 })
 export class BuyComponent implements OnInit {
-  b : BuyerModel;
+  b : Vehicle;
   regno1 : string = '';
 
   constructor( private service : BuyerService , private router : Router) { }
@@ -27,13 +27,13 @@ export class BuyComponent implements OnInit {
   }
 
   searchNo(){
-    this.b = this.service.search((this.regno1));
+    this.service.search(this.regno1).subscribe(data => this.b = data)
   }
 
   
 
   proceed(){
-   // this.b = new BuyerModel();
+    localStorage.setItem("regNo",this.regno1);
     this.router.navigate(['plan']);
   }
 
