@@ -9,7 +9,6 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Username</th>
                             <th>PolicyNo</th>
                             <th>ClaimNo</th>
                             <th>Status</th>
@@ -17,13 +16,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let user of list">
-                            <td *ngIf= "user.username != 'admin'">{{user.username}}</td>
-                            <td *ngIf= "user.username != 'admin'">{{user.policies[0].policyNo}}</td>
-                            <td *ngIf= "user.username != 'admin'">{{user.policies[0].claim.claimId}}</td>
-                            <td *ngIf= "user.username != 'admin'">{{user.policies[0].claim.status}}</td>
-                            <td *ngIf= "user.username != 'admin'">
-                                <button class="btn btn-success" (click)="editClaim(user.username)">Edit</button></td>
+                        <tr *ngFor="let pol of policies">
+                            <td>{{pol.policyNo}}</td>
+                            <td *ngIf= "pol.claim != null">{{pol.claim.claimId}}</td>
+                            <td *ngIf= "pol.claim != null">{{pol.claim.status}}</td>
+                            <td>
+                                <button class="btn btn-success" (click)="editClaim(pol.policyNo)">Edit</button></td>
                         </tr>
                     </tbody>
                 </table>

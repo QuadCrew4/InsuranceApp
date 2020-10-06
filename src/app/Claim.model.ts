@@ -1,6 +1,5 @@
 
     import { AddressModule } from './Address.model';
-    import { BankDetailsModule } from './BankDetails.model';
 
     export class ClaimInsurance
     {

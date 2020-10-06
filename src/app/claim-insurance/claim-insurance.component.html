@@ -14,29 +14,29 @@
     
         <div class='form-group'>
             <label for="vehicleno"><strong>Vehicle No.</strong></label>
-            <input class="form-control" name="vehicleno" [(ngModel)]=claimins.vehicleno
-            required pattern="[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4,}" placeholder="Enter Your Vehicle Number" #vehicleno='ngModel'>
-            <span *ngIf="vehicleno.touched && vehicleno.invalid" class="alert-danger">Invalid Vehicle Number</span>
+            <input class="form-control" name="vehicleno" [(ngModel)]=vehicleno
+            required pattern="[A-Z0-9]{4,}" placeholder="Enter Your Vehicle Number" #vehiclen='ngModel'>
+            <span *ngIf="vehiclen.touched && vehiclen.invalid" class="alert-danger">Invalid Vehicle Number</span>
         </div>
     
 
         <div class="form-group">
             <label for="amount"><b>Claim Amount</b></label>
-            <input class="form-control" name="amount" [(ngModel)]=claimins.amount
-            required pattern="[0-9]{3,}" placeholder="Enter Claim Amount" #amount='ngModel'>
-            <span *ngIf="amount.touched && amount.invalid" class="alert-danger">Invalid Amount</span>
+            <input class="form-control" name="amount" [(ngModel)]=amount
+            required pattern="[0-9]{3,}" placeholder="Enter Claim Amount" #amount1='ngModel'>
+            <span *ngIf="amount1.touched && amount1.invalid" class="alert-danger">Invalid Amount</span>
         </div>
 
         <div class="form-group">
             <label for="reason"><b>Reason to Claim Insurance</b></label>
-            <select  class="form-control" name= "reason" [(ngModel)]="claimins.reason" required #reason='ngModel'>
+            <select  class="form-control" name= "reason" [(ngModel)]=reason required #reason1='ngModel'>
                 <option [value]="claimreason" selected>Reason to Claim Insurance</option>
                 <option value="Natural Disaster">Natural Disaster</option>
                 <option value="Man-Made Disaster">Man-Made Disaster</option>
                 <option value="Road Accident">Road Accident</option>
                 <option value="Theft">Theft</option>
             </select>
-            <span *ngIf="reason.touched && reason.invalid" class="alert-danger">Select Reason</span>
+            <span *ngIf="reason1.touched && reason1.invalid" class="alert-danger">Select Reason</span>
         </div>
 
         

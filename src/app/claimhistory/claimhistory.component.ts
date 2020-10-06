@@ -1,9 +1,10 @@
   import { Component, OnInit } from '@angular/core';
   import { Router } from '@angular/router';
   import { BankDetailsModule } from '../BankDetails.model';
+import { Policy } from '../policy.model';
   import { ClaimhistoryService } from '../services/claimhistory.service';
   import { InsuranceService } from '../services/insurance.service';
-  import { User } from '../user.model';
+
 
   @Component({
     selector: 'app-claimhistory',
@@ -13,14 +14,15 @@
   export class ClaimhistoryComponent implements OnInit {
 
     
-    user : User;
+     
+    policies : Policy[] = [];
     username : string;
 
     constructor(private service : ClaimhistoryService) { }
 
     ngOnInit() {
       this.username = localStorage.getItem("username");
-      this.service.findUser(this.username).subscribe(data => this.user = data);
+      this.service.findPolicies(this.username).subscribe(data => this.policies = data);
     }
     
   }

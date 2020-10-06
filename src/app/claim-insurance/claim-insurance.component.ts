@@ -15,12 +15,15 @@
     })
     export class ClaimInsuranceComponent implements OnInit {
       
-      claimins: ClaimInsurance; 
+      status: string;
+      reason: string;
+      amount: string;
+      claimDate: string;
+      policyNo: string; 
       username : string;
       user : User;
       
       constructor(private service:InsuranceService ,private router:Router) {
-        this.claimins=new ClaimInsurance();
       }
 
       
@@ -31,13 +34,13 @@
       
       proceedNext() {
         var date=new Date();
-        this.claimins.claimDate=date.toLocaleDateString();
-        this.claimins.status="pending";
-        localStorage.setItem("status",this.claimins.status);
-        localStorage.setItem("reason",this.claimins.reason);
-        localStorage.setItem("amount",this.claimins.amount);
-        localStorage.setItem("claimDate",this.claimins.claimDate);
-        localStorage.setItem("policyNo",this.claimins.policyNo);
+        this.claimDate=date.toLocaleDateString();
+        this.status="pending";
+        localStorage.setItem("status",this.status);
+        localStorage.setItem("reason",this.reason);
+        localStorage.setItem("amount",this.amount);
+        localStorage.setItem("claimDate",this.claimDate);
+        localStorage.setItem("policyNo",this.policyNo);
         //this.service.saveClaim(this.claimins);
         this.router.navigate(['pdf']);  
       }

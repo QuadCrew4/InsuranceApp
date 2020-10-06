@@ -9,28 +9,29 @@
     <div class="container" style="padding-left:40px; padding-top: 20px;">
         
             
-                <table class="table table-bordered" >
-                    <thead>
-                        <tr>
-                            <th colspan="5" ><h3>Claim History</h3></th>
-                        </tr>
-                        <tr>
-                            <th>Policy No.</th>
-                            <th>Claim No.</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>  
-                <tbody>
-                    <tr class="table-success" *ngFor="let pol of policies">
-                        <td *ngIf="pol.claim != null">{{pol.policyNo}}</td>
-                        <td *ngIf="pol.claim != null">{{pol.claim.claimId}}</td>
-                        <td *ngIf="pol.claim != null">{{pol.claim.claimDate}}</td>
-                        <td *ngIf="pol.claim != null">{{pol.claim.amount}}</td>                               
-                        <td *ngIf="pol.claim != null">{{pol.claim.status}}</td>                                       
-                    </tr>                                
-                </tbody>
-                </table>
-                </div>
-    </body>
+                
+                    <table class="table table-bordered" >
+                        <thead>
+                            <tr>
+                                <th colspan="5" ><h3>Claim History</h3></th>
+                            </tr>
+                            <tr>
+                                <th>Policy No.</th>
+                                <th>Claim No.</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>  
+                    <tbody>
+                        <tr class="table-success" *ngFor="let pol of policies">
+                            <td *ngIf="pol.claim != null">{{pol.policyNo}}</td>
+                            <td *ngIf="pol.claim != null">{{pol.claim.claimId}}</td>
+                            <td *ngIf="pol.claim != null">{{pol.claim.claimDate}}</td>
+                            <td *ngIf="pol.claim != null">{{pol.claim.amount}}</td>                               
+                            <td *ngIf="pol.claim != null">{{pol.claim.status}}</td>                                       
+                        </tr>                                
+                    </tbody>
+                    </table>
+                    </div>
+        </body>
