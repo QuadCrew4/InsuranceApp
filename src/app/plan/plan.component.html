@@ -21,7 +21,7 @@
                 
                 <div class="termBox">
                     <label for="term">Choose year</label>&nbsp;
-                    <select name="term" [(ngModel)]=p.term #term='ngModel'>
+                    <select name="term" [(ngModel)]=p.term #year='ngModel'>
                         <option *ngFor = 'let y of years' [value]="y">{{y}} year</option>
                     </select>
                 </div> 
@@ -35,7 +35,7 @@
                     style="margin-left: 34%;"><b>SHOW QUOTE</b></button>-->
                 
                 <button type="button" class="btn btn-success" style="margin-left: 34%;margin-top: 5%;"
-                    (click)="pay()">MAKE PAYMENT</button>
+                    (click)="pay()" [disabled]="!plan.touched && !year.touched">MAKE PAYMENT</button>
             </div>
         </div>
     </div>
