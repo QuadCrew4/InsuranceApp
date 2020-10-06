@@ -1,4 +1,5 @@
   import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Policy } from '../policy.model';
 import { ClaimticketService } from '../services/claimticket.service';
 
@@ -10,7 +11,7 @@ import { ClaimticketService } from '../services/claimticket.service';
   export class PdfComponent implements OnInit {
     
 
-  constructor(private service:ClaimticketService) { }
+  constructor(private service:ClaimticketService, private router: Router) { }
   public date=new Date();
   policies:Policy[]=[];
   public claimDate=this.date.toLocaleDateString();
@@ -24,7 +25,9 @@ import { ClaimticketService } from '../services/claimticket.service';
     this.username = localStorage.getItem("username");
     this.service.findPolicies(this.username).subscribe(data => this.policies = data);
   }
-  
+  exit(){
+    this.router.navigate(['profile']);
+  }
   
   
 
