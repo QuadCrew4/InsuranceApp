@@ -20,7 +20,7 @@
                             <td>{{pol.policyNo}}</td>
                             <td *ngIf= "pol.claim != null">{{pol.claim.claimId}}</td>
                             <td *ngIf= "pol.claim != null">{{pol.claim.status}}</td>
-                            <td>
+                            <td *ngIf= "pol.claim != null">
                                 <button class="btn btn-success" (click)="editClaim(pol.policyNo)">Edit</button></td>
                         </tr>
                     </tbody>
