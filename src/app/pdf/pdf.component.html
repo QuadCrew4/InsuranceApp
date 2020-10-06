@@ -39,13 +39,13 @@
                 <div class="col-sm-6">
                     <label for="inputAddressLine1"><b>Address</b></label>
                     <input type="text" class="form-control" [(ngModel)]=address.street name="inputAddressLine1"
-                    placeholder="Street Address"   required pattern="[A-Za-z]{5,}" #street='ngModel' >
+                    placeholder="Street Address"   required pattern="[A-Za-z ]{5,}" #street='ngModel' >
                     <span *ngIf="street.touched && street.invalid" class="alert-danger">Invalid Street Name</span>
                 </div>
                 <div class="col-sm-6">
                     <label for="inputAddressLine2"><b>Address (Line 2)</b></label>
                     <input type="text" class="form-control"  [(ngModel)]=address.landmark name="inputAddressLine2"
-                    placeholder="Landmark" pattern="[A-Za-z]{5,}" #landmark='ngModel'>
+                    placeholder="Landmark" pattern="[A-Za-z ]{5,}" #landmark='ngModel'>
                     <span *ngIf="landmark.touched && landmark.invalid" class="alert-danger">Invalid Landmark</span>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                 <div class="col-sm-3">
                     <label for="inputState"><b>State</b></label>
                     <input type="text" class="form-control" name="inputState" 
-                    [(ngModel)]=address.state placeholder="State" required pattern="[A-Za-z]{5,}" #state='ngModel'>
+                    [(ngModel)]=address.state placeholder="State" required pattern="[A-Za-z ]{5,}" #state='ngModel'>
                     <span *ngIf="state.touched && state.invalid" class="alert-danger">Invalid State</span>  
                 </div>
                 <div class="col-sm-3">
