@@ -36,9 +36,10 @@ export class PlanComponent implements OnInit {
   }
 
   pay(){
-    // var date=new Date();
-    // this.p.expDate=date.toLocaleDateString();
-    this.p.expDate = '21/10/2023';
+    var date=new Date();
+    date.setDate(date.getDate() + (365*this.p.term));
+    this.p.expDate = date.toLocaleDateString();
+    localStorage.setItem("expDate",this.p.expDate);
     this.service.addUserPolicy(this.p,this.user);
     alert("Congratulations, your payment is successful.");
     this.router.navigate(['profile']);
