@@ -31,10 +31,30 @@
                 <br>
                 
                 
-                <!--<button type="button" class="btn btn-warning" (click)="quote()"
+                <!--<button type="button" class="btn btn-warning" (click)=""
                     style="margin-left: 34%;"><b>SHOW QUOTE</b></button>-->
-                
-                <button type="button" class="btn btn-success" style="margin-left: 34%;margin-top: 5%;"
+                    <div class="but">
+                        <button class="btn btn-warning btn-lg" type="submit"
+                        data-toggle="collapse" data-target="#collapseExample" 
+                        aria-expanded="false" aria-controls="collapseExample" (click)="quote()"
+                        style="margin-left: 33%;margin-top: 3%;font: 1rem;" 
+                        [disabled]="!plan.touched && !year.touched">SHOW QUOTE</button>
+
+                        <div class="collapse" id="collapseExample">
+                            <div style="padding-left: 120px;">
+                                <label style="padding-top: 20px; font-size: 18px;">IDV: {{insuranceAmount|currency:'INR':'symbol':'1.2-2'}}</label><br>
+
+                                <label style="padding-top: 10px; font-size: 18px; ">Amount to be paid: {{Amount|currency:'INR':'symbol':'1.2-2'}}</label>
+                                            
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                <button type="button" class="btn btn-success" style="margin-left: 34%;margin-top: 7%;"
                     (click)="pay()" [disabled]="!plan.touched && !year.touched">MAKE PAYMENT</button>
             </div>
         </div>
