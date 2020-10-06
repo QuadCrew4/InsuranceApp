@@ -61,7 +61,7 @@
             alert(`
                   Claimed Succesfully
                     `);
-            this.router.navigate(['claimhistory']);
+            this.router.navigate(['profile']);
 
           
           
