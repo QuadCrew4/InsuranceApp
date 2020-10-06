@@ -9,6 +9,7 @@
   export class RenewalService {
 
   private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+  expDate : string;
 
     constructor(private http: HttpClient) { }
 
@@ -17,18 +18,10 @@
     }
 
     renew(user : User, policyNo: string){
-
-    // if(user.policies[0].policyNo == policyNo)
-    // {
-    //   user.policies[0].expDate = '05-05-2050';
-    // }
-    // else if(user.policies[1].policyNo == policyNo){
-    //   user.policies[1].expDate = '19-09-2027';
-    // }
-    
-    // var uname = localStorage.getItem("username");
-    // var expDate = '19-09-2027';
-    // const params = new HttpParams().append('username',uname).append('policyNo',policyNo).append('expDate',expDate);
-    return  this.http.put(this.baseUrl+"/renewpolicy/"+user.username+","+policyNo+","+"12-10-2025",user).subscribe(data => data = user);
+      // this.expDate = localStorage.getItem("expDate");
+      // var date = new Date(this.expDate);
+      // date.setDate(date.getDate() + (365*3));
+      // this.expDate = date.toLocaleDateString();
+      return  this.http.put(this.baseUrl+"/renewpolicy/"+user.username+","+policyNo+","+"12-10-2025",user).subscribe(data => data = user);
   }
 }
