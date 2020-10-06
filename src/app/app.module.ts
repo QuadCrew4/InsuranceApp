@@ -22,6 +22,7 @@ import { RenewalComponent } from './renewal/renewal.component';
 import { ProfilecardComponent } from './profilecard/profilecard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditclaimComponent } from './editclaim/editclaim.component';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EditclaimComponent } from './editclaim/editclaim.component';
     DashboardComponent,
     RenewalComponent,
     ProfilecardComponent,
-    EditclaimComponent
+    EditclaimComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

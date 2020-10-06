@@ -4,7 +4,7 @@
 import { Policy } from '../policy.model';
   import { ClaimhistoryService } from '../services/claimhistory.service';
   import { InsuranceService } from '../services/insurance.service';
-  import { User } from '../user.model';
+
 
   @Component({
     selector: 'app-claimhistory',
@@ -14,6 +14,7 @@ import { Policy } from '../policy.model';
   export class ClaimhistoryComponent implements OnInit {
 
     
+     
     policies : Policy[] = [];
     username : string;
 
