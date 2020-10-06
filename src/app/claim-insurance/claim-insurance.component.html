@@ -8,7 +8,7 @@
         <div class='form-group'>
             <label for="policyNo"><strong>Policy No.</strong></label>
             <input class="form-control" name="policyNo" [(ngModel)]=claimins.policyNo
-            required pattern="[A-Za-z0-9]{1,}" placeholder="Enter Your Policy Number" #policyNo='ngModel'>
+            required  placeholder="Enter Your Policy Number" #policyNo='ngModel'>
             <span *ngIf="policyNo.touched && policyNo.invalid" class="alert-danger">Invalid Policy Number</span>
         </div>
     

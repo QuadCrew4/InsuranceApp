@@ -16,6 +16,7 @@ import { PlanComponent } from '../app/plan/plan.component';
 import { RenewalComponent } from './renewal/renewal.component';
 import { ProfilecardComponent } from './profilecard/profilecard.component';
 import { EditclaimComponent } from './editclaim/editclaim.component';
+import { AddressComponent } from './address/address.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:'renewal',component:RenewalComponent},
   {path: 'logout', component: LoginComponent},
   {path: 'editclaim', component: EditclaimComponent},
+  {path: 'address', component: AddressComponent},
   {path:'profilecard',component:ProfilecardComponent},
   {path:'**', redirectTo:'/home', pathMatch:'full'}
 ];

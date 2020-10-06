@@ -1,36 +1,36 @@
+<head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     
-    <head>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+    
+    <div class="container" style="padding-left:40px; padding-top: 20px;">
         
-        </head>
-        <body>
-        
-        <div class="container" style="padding-left:40px; padding-top: 20px;">
             
-                
-                    <table class="table table-bordered" >
-                        <thead>
-                            <tr>
-                                <th colspan="4" ><h3>Claim History</h3></th>
-                            </tr>
-                            <tr>
-                                <th>Claim No.</th>
-                                <th>Policy No.</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>  
-                    <tbody>
-                        <tr class="table-success">
-                            <td>{{user.policies[0].Claim.claimId}}</td>
-                            <td>{{user.policies[0].policyNo}}</td>
-                            <td>{{user.policies[0].Claim.claimDate}}</td>
-                            <td>{{user.policies[0].Claim.status}}
-                            </td>                                       
-                        </tr>                                
-                    </tbody>
-                    </table>
-                    </div>
-        </body>
+                <table class="table table-bordered" >
+                    <thead>
+                        <tr>
+                            <th colspan="5" ><h3>Claim History</h3></th>
+                        </tr>
+                        <tr>
+                            <th>Policy No.</th>
+                            <th>Claim No.</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>  
+                <tbody>
+                    <tr class="table-success" *ngFor="let pol of policies">
+                        <td *ngIf="pol.claim != null">{{pol.policyNo}}</td>
+                        <td *ngIf="pol.claim != null">{{pol.claim.claimId}}</td>
+                        <td *ngIf="pol.claim != null">{{pol.claim.claimDate}}</td>
+                        <td *ngIf="pol.claim != null">{{pol.claim.amount}}</td>                               
+                        <td *ngIf="pol.claim != null">{{pol.claim.status}}</td>                                       
+                    </tr>                                
+                </tbody>
+                </table>
+                </div>
+    </body>
