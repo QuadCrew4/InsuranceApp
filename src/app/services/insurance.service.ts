@@ -2,6 +2,7 @@
           import { Injectable } from '@angular/core';
           import { Observable } from 'rxjs';
           import { ClaimInsurance } from '../claim.model';
+import { ClaimPdf } from '../ClaimPdf.model';
           
           import { User } from '../user.model';
           import { Vehicle } from '../vehicle.model';
@@ -59,4 +60,3 @@
               return this.premiumAmount;
             }
           }
-

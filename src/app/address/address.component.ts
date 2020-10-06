@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClaimInsurance } from '../claim.model';
+import { ClaimPdf } from '../ClaimPdf.model';
+import { Policy } from '../policy.model';
+import { ClaimticketService } from '../services/claimticket.service';
+
+import { InsuranceService } from '../services/insurance.service';
 
 @Component({
   selector: 'app-address',
@@ -7,14 +14,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddressComponent implements OnInit {
 
-  constructor() { }
-  public date=new Date();
-  public claimDate=this.date.toLocaleDateString();
-  public claimId:string=localStorage.getItem("sequence");
-  public status:string="pending";
-  public claimAmount=localStorage.getItem("amount");
-  public accountNumber=localStorage.getItem("accountno");
-  ngOnInit() {
-  }
+  address = new ClaimInsurance;
+    constructor(private service:InsuranceService ,private router:Router) { }
 
-}
+    ngOnInit() {
+    }
+    proceedSecond() {
+    localStorage.setItem("vehicleimage",this.address.vehicleimage);
+      this.router.navigate(['furtherdetails']);  
+    }
+    onFileSelected(event)
+    {
+      console.log(event);
+    }
+    
+  }

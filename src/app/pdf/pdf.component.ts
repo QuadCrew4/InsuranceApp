@@ -1,9 +1,6 @@
   import { Component, OnInit } from '@angular/core';
-  import { Router } from '@angular/router';
-  import { AddressModule } from '../Address.model';
-  import {  ClaimInsurance } from '../Claim.model';
-
-  import { InsuranceService } from '../services/insurance.service';
+import { Policy } from '../policy.model';
+import { ClaimticketService } from '../services/claimticket.service';
 
   @Component({
     selector: 'app-pdf',
@@ -11,20 +8,25 @@
     styleUrls: ['./pdf.component.css']
   })
   export class PdfComponent implements OnInit {
-    address = new ClaimInsurance;
-    constructor(private service:InsuranceService ,private router:Router) { }
-
-    ngOnInit() {
-    }
-    proceedSecond() {
-    localStorage.setItem("vehicleimage",this.address.vehicleimage);
-      //this.service.SaveAddress(this.address);
-      //this.address=new AddressModule();
-      this.router.navigate(['furtherdetails']);  
-    }
-    onFileSelected(event)
-    {
-      console.log(event);
-    }
     
+
+  constructor(private service:ClaimticketService) { }
+  public date=new Date();
+  policies:Policy[]=[];
+  public claimDate=this.date.toLocaleDateString();
+  public status:string="pending";
+  public policyNo=localStorage.getItem("policyNo");
+   public claimAmount=localStorage.getItem("amount");
+
+  public accountNumber=localStorage.getItem("accountno");
+  username:string;
+  ngOnInit() {
+    this.username = localStorage.getItem("username");
+    this.service.findPolicies(this.username).subscribe(data => this.policies = data);
   }
+  
+  
+  
+
+}
+

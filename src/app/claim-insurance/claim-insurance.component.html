@@ -1,5 +1,5 @@
-    <h3>Claim Insurance</h3>
-    <div class="sai">
+<h3>Claim Insurance</h3>
+    <div  class="sai">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -7,9 +7,9 @@
     <form (ngSubmit)="proceedNext()" #addForm="ngForm">   
         <div class='form-group'>
             <label for="policyNo"><strong>Policy No.</strong></label>
-            <input class="form-control" name="policyNo" [(ngModel)]=claimins.policyNo
-            required  placeholder="Enter Your Policy Number" #policyNo='ngModel'>
-            <span *ngIf="policyNo.touched && policyNo.invalid" class="alert-danger">Invalid Policy Number</span>
+            <input class="form-control" name="policyNo" [(ngModel)]=policyNo
+            required pattern="[A-Za-z0-9_]{1,}" placeholder="Enter Your Policy Number" #policyN='ngModel'>
+            <span *ngIf="policyN.touched && policyN.invalid" class="alert-danger">Invalid Policy Number</span>
         </div>
     
         <div class='form-group'>

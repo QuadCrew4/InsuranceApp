@@ -41,10 +41,10 @@
         localStorage.setItem("amount",this.amount);
         localStorage.setItem("claimDate",this.claimDate);
         localStorage.setItem("policyNo",this.policyNo);
-        //this.service.saveClaim(this.claimins);
-        this.router.navigate(['pdf']);  
+        this.router.navigate(['address']);  
       }
       
       
 
+    
     }

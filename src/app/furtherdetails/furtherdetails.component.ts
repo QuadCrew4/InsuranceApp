@@ -20,10 +20,9 @@
             username:string;
             user: User;
             policyNo:string;
-            sequence:number=4953;
-            extra:string="CL_0";
-            claimId:string;
-
+            
+  
+  
             constructor(private service:RenewalService, private insser:InsuranceService ,private router:Router, public formBuilder: FormBuilder,private customValidator:CustomValidationService){
             
               this.bankDetailsForm = this.formBuilder.group({
@@ -36,8 +35,8 @@
                 validator: this.customValidator.accountnoMatchValidator("accountno","confirmaccountno")
               });
             }
-
-
+  
+  
             ngOnInit() {
               this.username = localStorage.getItem("username");
             }
@@ -51,26 +50,23 @@
             this.bank.amount=localStorage.getItem("amount");
             this.bank.claimDate=localStorage.getItem("claimDate");
             this.bank.vehicleimage=localStorage.getItem("vehicleimage");
-            this.bank.policyNo=localStorage.getItem("policyNo");
+          
             localStorage.setItem("accountno",this.bank.accountno);
-            this.policyNo=this.bank.policyNo;
+            this.policyNo=localStorage.getItem("policyNo");
           
             this.insser.saveBank(this.username,this.policyNo,this.bank);
           
             this.service.findUser(this.username).subscribe(data => this.user = data);
           
-              alert(`Claimed Succesfully`);
-                      
-          
-              this.sequence++;
-              this.claimId=this.extra+this.sequence;
-              localStorage.setItem("sequence",this.claimId);
-              this.router.navigate(['address']);
-            
+              alert(`
+                    Claimed Succesfully
+                      `);
+              this.router.navigate(['pdf']);
+  
+             
             
             }
             }
-
+  
             
-
-          
+  
