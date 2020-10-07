@@ -28,7 +28,7 @@
                             <td *ngIf="pol.claim != null">{{pol.policyNo}}</td>
                             <td *ngIf="pol.claim != null">{{pol.claim.claimId}}</td>
                             <td *ngIf="pol.claim != null">{{pol.claim.claimDate}}</td>
-                            <td *ngIf="pol.claim != null">{{pol.claim.amount}}</td>                               
+                            <td *ngIf="pol.claim != null">{{pol.claim.amount |currency:'INR':'symbol':'1.2-2'}}</td>                               
                             <td *ngIf="pol.claim != null">{{pol.claim.status}}</td>                                       
                         </tr>                                
                     </tbody>

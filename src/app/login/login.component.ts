@@ -34,7 +34,7 @@
         alert('Admin successfully Logged in')
         this.router.navigate(['admin']);
       }
-      else
+      else if(this.user.username != "admin")
       {
         alert('User successfully Logged in')
         this.router.navigate(['profile']);
