@@ -5,6 +5,7 @@ import { Vehicle } from '../vehicle.model';
 import { Observable } from 'rxjs';
 import { Policy } from '../policy.model';
 import { User } from '../user.model';
+import { IfStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class BuyerService {
   vehicle = new Vehicle;
   insurancePrice : number;
   Amount : number;
+  vage : number;
+  monthlyAmount: number;
 
   private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
 
@@ -40,26 +43,44 @@ export class BuyerService {
     return this.http.get<Vehicle>(this.baseUrl+"/fetchvehicle/"+regNo);
   }
 
-  calculateIDV(regNo : string, p : Policy) : number{   
+  calculateIDV(regNo : string, p : Policy, age:string) : number{  
+    if(age==="6 months")
+      this.vage=0.5;
+    else if(age=="one year")
+      this.vage=1;
+    else if(age=="two years")
+      this.vage=2;
+    else if(age == "three years")
+      this.vage=3;
+    else if (age == "more than 5")
+      this.vage=5; 
     this.find(regNo).subscribe(data => this.vehicle = data);
-    this.insurancePrice = (this.vehicle.price) - ((this.vehicle.price) * 0.05);
+    this.insurancePrice = (this.vehicle.price) - ((this.vehicle.price)* this.vage * 0.05);
     return this.insurancePrice;
   }
 
   planTerm(p : Policy) : number{
-    if(p.type=='Comprehensive')
-      this.Amount=this.insurancePrice*0.15;
-    else
-      this.Amount=this.insurancePrice*0.12;
-    
-    if(p.term==1)
-      this.Amount = this.insurancePrice*1;
-    if(p.term==2)
-      this.Amount = this.insurancePrice*2;
-    if(p.term==3)
-      this.Amount = this.insurancePrice*3;
+    if(p.type === 'comprehensive' && p.term == 1)
+      this.Amount = this.insurancePrice * 0.15 * 1;
+    if(p.type === 'comprehensive' && p.term == 2)
+      this.Amount = this.insurancePrice * 0.15 * 2;
+    if(p.type === 'comprehensive' && p.term == 3)
+      this.Amount = this.insurancePrice * 0.15 * 3;
+
+    if(p.type ==='third party' && p.term == 1)
+      this.Amount = this.insurancePrice * 0.12 * 1;
+    if(p.type ==='third party' && p.term == 2)
+      this.Amount = this.insurancePrice * 0.12 * 2;
+    if(p.type ==='third party' && p.term == 3)
+      this.Amount = this.insurancePrice * 0.12 * 3;
 
     return this.Amount;
   }
+
+  installment(p : Policy) : number{
+    this.monthlyAmount = this.Amount/(p.term*12);
+    return this.monthlyAmount;
+  }
+
 
 }

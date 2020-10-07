@@ -11,21 +11,25 @@ import { User } from '../user.model';
 })
 export class PlanComponent implements OnInit {
 
-  p = new Policy;
+  p:Policy;
   years: number[];
   plans:string[];
   plan: string;
   year:number;
+  age: string;
+  ag:string;
   username : string;
   user: User;
   insuranceAmount : number;
   Amount : number;
+  monthlyAmount : number;
   vehicleno:string;
   
 
   constructor(private router : Router, private service:  BuyerService) { 
+    this.p = new Policy;
     this.years = [1,2,3]
-    this.plans = ['third party policy' , 'comprehensive policy']
+    this.plans = ['third party' , 'comprehensive']
   }
 
   ngOnInit(): void {
@@ -35,9 +39,9 @@ export class PlanComponent implements OnInit {
 
   quote(){
     this.vehicleno = localStorage.getItem("regNo");
-    this.insuranceAmount=  this.service.calculateIDV(this.vehicleno,this.p);
+    this.insuranceAmount=  this.service.calculateIDV(this.vehicleno,this.p,this.age);
     this.Amount= this.service.planTerm(this.p);
-    //this.router.navigate(['calculate']);
+    this.monthlyAmount = this.service.installment(this.p);
   }
 
   pay(){

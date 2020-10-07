@@ -3,7 +3,7 @@
 <div class="card" style="max-width: 100%;">
     <div class="row no-gutters">
         <div class="col-sm-6" style="background: #868e96; ">
-            <img src="../../assets/images/plan.jpg" class="card-img-top h-100" style="opacity: 0.8;">
+            <img src="../../assets/images/plan.jpg" class="card-img-top h-100" >
         </div>
         <div class="col-sm-5">
             <div class="card-body">
@@ -15,7 +15,7 @@
                 <div class="planBox">
                     <label for="plan">Choose plan</label>&nbsp;
                     <select name="plan" [(ngModel)]=p.type #plan='ngModel'>
-                        <option *ngFor = 'let pl of plans' [value]="pl">{{pl}} </option>
+                        <option *ngFor = 'let pl of plans' [value]="pl">{{pl}} policy</option>
                     </select>
                 </div> 
                 
@@ -25,27 +25,33 @@
                         <option *ngFor = 'let y of years' [value]="y">{{y}} year</option>
                     </select>
                 </div> 
+
+                <div class="ageBox">
+                    <label for="age">Vehicle Age</label>&nbsp;
+                    <select name="age" [(ngModel)]= age #ag='ngModel'>
+                        
+						<option value="6 months">Less than 6 months</option>
+						<option value="one year">One Year</option>
+						<option value="two years">Two Years</option>
+					    <option value="three years">Three Years</option>
+						<option value="more than 5">More than 5 Years</option>
+                    </select>
+                </div> 
                 <br>
                 
-                
-                <br>
-                
-                
-                <!--<button type="button" class="btn btn-warning" (click)=""
-                    style="margin-left: 34%;"><b>SHOW QUOTE</b></button>-->
                     <div class="but">
                         <button class="btn btn-warning btn-lg" type="submit"
                         data-toggle="collapse" data-target="#collapseExample" 
                         aria-expanded="false" aria-controls="collapseExample" (click)="quote()"
                         style="margin-left: 33%;margin-top: 3%;font: 1rem;" 
-                        [disabled]="!plan.touched && !year.touched">SHOW QUOTE</button>
+                        [disabled]="!plan.touched && !year.touched && !ag.touched">SHOW QUOTE</button>
 
                         <div class="collapse" id="collapseExample">
-                            <div style="padding-left: 120px;">
-                                <label style="padding-top: 20px; font-size: 18px;">IDV: {{insuranceAmount|currency:'INR':'symbol':'1.2-2'}}</label><br>
-
-                                <label style="padding-top: 10px; font-size: 18px; ">Amount to be paid: {{Amount|currency:'INR':'symbol':'1.2-2'}}</label>
-                                            
+                            <div style="padding-left: 120px;color: blue;">
+                                <br>
+                                <label style="padding-top: 10px; font-size: 20px; "><b>Total Price: {{Amount|currency:'INR':'symbol':'1.2-2'}}</b></label>
+                                <br>
+                                <label style="padding-top: 10px; font-size: 20px;"><b>Amount to be paid monthly: {{monthlyAmount|currency:'INR':'symbol':'1.2-2'}}</b></label>
                             </div>
                         </div>
                     </div>
@@ -54,8 +60,8 @@
 
 
 
-                <button type="button" class="btn btn-success" style="margin-left: 34%;margin-top: 7%;"
-                    (click)="pay()" [disabled]="!plan.touched && !year.touched">MAKE PAYMENT</button>
+                <button type="button" class="btn btn-success" style="margin-left: 34%;margin-top: 7%;font: 1rem;"
+                    (click)="pay()" [disabled]="!plan.touched && !year.touched&& !ag.touched">MAKE PAYMENT</button>
             </div>
         </div>
     </div>

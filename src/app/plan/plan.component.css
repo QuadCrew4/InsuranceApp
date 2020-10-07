@@ -1,13 +1,19 @@
 
 .planBox{
     margin-left: 5%;
-    margin-bottom: 10%;
-    font-size: 23px;
+    margin-bottom: 5%;
+    font-size: 22px;
     color: rgb(12, 11, 11);
 }
 .termBox{
     margin-left: 5%;   
-    font-size: 23px;
+    font-size: 22px;
+    margin-bottom: 5%;
+    color: rgb(12, 11, 11);
+}
+.ageBox{
+    margin-left: 5%;   
+    font-size: 22px;
     color: rgb(12, 11, 11);
 }
 .card-title{
