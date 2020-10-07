@@ -4,6 +4,7 @@ import { Policy } from '../policy.model';
 import { BuyerService } from '../services/buyer.service';
 import { User } from '../user.model';
 
+
 @Component({
   selector: 'app-plan',
   templateUrl: './plan.component.html',
