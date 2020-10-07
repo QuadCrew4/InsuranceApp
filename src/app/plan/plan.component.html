@@ -39,26 +39,44 @@
                 </div> 
                 <br>
                 
-                    <div class="but">
-                        <button class="btn btn-warning btn-lg" type="submit"
-                        data-toggle="collapse" data-target="#collapseExample" 
-                        aria-expanded="false" aria-controls="collapseExample" (click)="quote()"
-                        style="margin-left: 33%;margin-top: 3%;font: 1rem;" 
-                        [disabled]="!plan.touched && !year.touched && !ag.touched">SHOW QUOTE</button>
 
-                        <div class="collapse" id="collapseExample">
-                            <div style="padding-left: 120px;color: blue;">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-toggle="modal" 
+                    data-target="#exampleModal" (click)="quote()" 
+                    style="margin-left: 33%;margin-top: 3%;font: 1rem;" 
+                    [disabled]="!plan.touched && !year.touched && !ag.touched">
+                            SHOW QUOTE
+                </button>
+  
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" 
+                    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="background-color:teal;">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="color: white;">
+                                Price Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" 
+                            aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        <div class="modal-body">
+                            <div style="align-content:center; color: white;">
                                 <br>
                                 <label style="padding-top: 10px; font-size: 20px; "><b>Total Price: {{Amount|currency:'INR':'symbol':'1.2-2'}}</b></label>
                                 <br>
                                 <label style="padding-top: 10px; font-size: 20px;"><b>Amount to be paid monthly: {{monthlyAmount|currency:'INR':'symbol':'1.2-2'}}</b></label>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-lg" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
                     </div>
+                </div>
 
-
-
-
+                    
 
                 <button type="button" class="btn btn-success" style="margin-left: 34%;margin-top: 7%;font: 1rem;"
                     (click)="pay()" [disabled]="!plan.touched && !year.touched&& !ag.touched">MAKE PAYMENT</button>
