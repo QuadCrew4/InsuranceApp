@@ -40,4 +40,7 @@
         this.router.navigate(['profile']);
       }
     }
+    goReset(){
+      this.router.navigate(['resetpassword']);
+    }
   }
