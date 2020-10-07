@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Policy } from '../policy.model';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,12 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  name: string;
 
-  constructor(private router: Router) { }
+  name: string;
+  policies : Policy[];
+
+  constructor(private router: Router, private service:ProfileService) { }
 
   ngOnInit() {
     this.name= localStorage.getItem("uname");
+    
   }
   claim()
   {
@@ -30,4 +35,5 @@ export class ProfileComponent implements OnInit {
   profile(){
     this.router.navigate(['profilecard']);
   }
+ 
 }

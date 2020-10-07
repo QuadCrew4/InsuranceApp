@@ -26,8 +26,7 @@ body{
     background-color: antiquewhite;
 }*/
 .details{  
-    background-color: grey;
-    
+    background-image: url(../../assets/images/bg3.jpg);
 }
 .collapse{
     margin-right: 20%;

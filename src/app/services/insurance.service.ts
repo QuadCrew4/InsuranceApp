@@ -52,6 +52,7 @@ import { ClaimPdf } from '../ClaimPdf.model';
 
               return this.insurancePrice;
             }
+
             plan(plan: string) : number{
               if(plan=='Comprehensive')
                 this.premiumAmount=this.insurancePrice*0.15;
@@ -59,4 +60,6 @@ import { ClaimPdf } from '../ClaimPdf.model';
                 this.premiumAmount=this.insurancePrice*0.12;
               return this.premiumAmount;
             }
+
+            
           }

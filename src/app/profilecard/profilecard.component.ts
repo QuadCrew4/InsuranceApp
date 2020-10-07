@@ -11,19 +11,24 @@ import { Policy } from '../policy.model';
 })
 export class ProfilecardComponent implements OnInit {
 
-  // p : profileModel;
-  policies : Policy[];
+  policies : Policy[] = [];
   policyNo : string;
   username : string;
+  name: string;
 
   constructor(private service : ProfileService , private router : Router) { }
 
   ngOnInit() {
-
+    this.name= localStorage.getItem("uname");
+    this.username= localStorage.getItem("username");
+    this.service.search(this.username).subscribe(data => this.policies = data);
     // this.policyNo = localStorage.getItem("policyNo");
   }
 
-  searchName(){
-    this.service.search(this.username).subscribe(data => this.policies = data);
+  back(){
+    this.router.navigate(['profile']);
   }
+
+  
+  
 }
