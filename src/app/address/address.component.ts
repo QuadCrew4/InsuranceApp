@@ -13,14 +13,14 @@ import { InsuranceService } from '../services/insurance.service';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
-
-  vehicleimage : string;
+ address=new ClaimInsurance;
+ // vehicleimage : string;
     constructor(private service:InsuranceService ,private router:Router) { }
 
     ngOnInit() {
     }
     proceedSecond() {
-    localStorage.setItem("vehicleimage",this.vehicleimage);
+    localStorage.setItem("vehicleimage",this.address.vehicleimage);
       this.router.navigate(['furtherdetails']);  
     }
     onFileSelected(event)
