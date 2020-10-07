@@ -75,7 +75,7 @@
           <main>
               <div class="container-fluid" 
               style="background-image: url(../../assets/images/bg-02.jpg);">
-                  <h1 class="mt-4">User Dashboard</h1>
+                  <h1 class="mt-4" style="padding: 10px;">User Dashboard</h1>
                   <ol class="breadcrumb mb-4">
                       <li class="breadcrumb-item active">
                         <p class="lead">Welcome to  your profile, <b>{{ name }}</b></p>
@@ -86,6 +86,7 @@
                     <tr>
                       <th>Policy No.</th>
                       <th>Vehicle Registration No.</th>
+                      <th>Vehicle Model</th>
                       <th>Expiry Date</th>
                   </tr>
                   </thead>
@@ -93,6 +94,7 @@
                     <tr *ngFor="let pol of policies">
                       <td>{{pol.policyNo}}</td>
                       <td>{{pol.vehicle.regNo}}</td>
+                      <td>{{pol.vehicle.manufacturer}} {{pol.vehicle.model}}</td>
                       <td>{{pol.expDate}}</td>
                     </tr>
                   </tbody>
