@@ -17,24 +17,35 @@
 									
 									<div class="form-holder">
 										
-										<input required name="vehicleno" [(ngModel)]=vehicleno  placeholder="Vehicle No" class="form-control">
+										<input required name="inputvehicleno" [(ngModel)]=vehicleno  placeholder="Vehicle No" class="form-control">
 									</div>
 									
 							
 								
 									<div class="form-holder">
 										
-										<select name="plan" [(ngModel)]=plan>
+										<select name="inputplan" [(ngModel)]=plan>
 											<option [value]="Choose" selected>Choose Plan Type</option>
 											<option value="thirdparty">Thirdparty</option>
 											<option value="Comprehensive">Comprehensive</option>
 											
 										</select>
 									</div>
+
+									<div class="form-holder">
+										
+										<select name="inputterm" [(ngModel)]=term>
+											<option [value]="Choose" selected>Choose Plan Term</option>
+											<option value="1">One Year</option>
+											<option value="2">Two Years</option>
+											<option value="3">Three Years</option>
+											
+										</select>
+									</div>
 									
 								
 									<div class="form-holder">
-										<select name="age" [(ngModel)]="age">
+										<select name="inputage" [(ngModel)]="age">
 											<option [value]="vehicleage"  selected>Vehicle age</option>
 											<option value="6 months">Less than 6 months</option>
 											<option value="one year">One Year</option>

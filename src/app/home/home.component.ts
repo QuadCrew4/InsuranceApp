@@ -15,4 +15,10 @@ export class HomeComponent implements OnInit {
   calc(){
     this.router.navigate(['calculate']);
   }
+  goLogin(){
+    this.router.navigate(['login']);
+  }
+  goRegister(){
+    this.router.navigate(['register']);
+  }
 }

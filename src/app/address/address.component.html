@@ -38,15 +38,9 @@
     <div class="form-group row">
         <div class="col-sm-6">
             <label for="inputAddressLine1"><b>Address</b></label>
-<<<<<<< HEAD
             <input type="text" class="form-control" [(ngModel)]=address.street name="inputAddressLine1"
             placeholder="Street Address"   required pattern="[A-Za-z- ,0-9]{5,}" #street='ngModel' >
             <span *ngIf="street.touched && street.invalid" class="alert-danger">Invalid Street Name</span>
-=======
-            <input type="text" class="form-control" [(ngModel)]=street name="inputAddressLine1"
-            placeholder="Street Address"   required pattern="[A-Za-z]{5,}" #st='ngModel' >
-            <span *ngIf="st.touched && st.invalid" class="alert-danger">Invalid Street Name</span>
->>>>>>> ed9651d9c5e27af6709fe56631a5e3b27c72d75e
         </div>
         <div class="col-sm-6">
             <label for="inputAddressLine2"><b>Address (Line 2)</b></label>
@@ -59,7 +53,6 @@
         <div class="col-sm-6">
             <label for="inputCity"><b>City</b></label>
             <input type="text" class="form-control" name="inputCity" 
-<<<<<<< HEAD
             [(ngModel)]=address.city placeholder="City" pattern="[A-Za-z]{4,}" #city='ngModel'>
             <span *ngIf="city.touched && city.invalid" class="alert-danger">Invalid City</span>
         </div>
@@ -104,16 +97,6 @@
                 <option value="Uttarakhand">Uttarakhand</option>
                 <option value="West Bengal">West Bengal</option>
                 </select>
-=======
-            [(ngModel)]=city placeholder="City" pattern="[A-Za-z]{5,}" #c='ngModel'>
-            <span *ngIf="c.touched && c.invalid" class="alert-danger">Invalid City</span>
-        </div>
-        <div class="col-sm-3">
-            <label for="inputState"><b>State</b></label>
-            <input type="text" class="form-control" name="inputState" 
-            [(ngModel)]=state placeholder="State" required pattern="[A-Za-z ]{5,}" #st='ngModel'>
-            <span *ngIf="st.touched && st.invalid" class="alert-danger">Invalid State</span>  
->>>>>>> ed9651d9c5e27af6709fe56631a5e3b27c72d75e
         </div>
         <div class="col-sm-3">
             <label for="inputPostalCode"><b>Postal Code</b></label>

@@ -6,7 +6,7 @@
                 </thead>
                 <tbody>
                     <tr><td>Set Amount</td>
-                        <td><input name="empid" [(ngModel)]=policy.claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
+                        <td><input name="amount" [(ngModel)]=policy.claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
                         <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount is invalid</span></td>
                     </tr>
                     <tr>

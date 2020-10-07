@@ -1120,7 +1120,7 @@
  .site-header .top-header {
    padding: 30px 0; }
  .site-header .bottom-header {
-   background-color: #4a4c4e;
+   background-color: white;
    *zoom: 1;
    padding: 20px 0; }
    .site-header .bottom-header:after {
@@ -1199,7 +1199,7 @@
      .main-navigation .menu li {
        display: inline-block; }
        .main-navigation .menu li a {
-         color: white;
+         color: black;
          padding: 0 10px;
          border-right: 1px solid rgba(255, 255, 255, 0.3);
          -webkit-transition: .3s ease;
@@ -1724,4 +1724,8 @@
          border-right: none; }
    .site-footer .colophon {
      color: #898b8d; }
+
+     .navbar-nav{
+      margin-left: 200px;
+    }
  

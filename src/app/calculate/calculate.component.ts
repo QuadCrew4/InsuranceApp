@@ -11,6 +11,7 @@
       vehicleno : string;
       age: string;
       plan : string;
+      term: number;
       insuranceAmount : number;
       premiumAmount : number;
     
@@ -20,6 +21,6 @@
       }
       calculatePremium(){ 
         this.insuranceAmount= this.service.calculate(this.vehicleno,this.plan,this.age);
-        this.premiumAmount= this.service.plan(this.plan);
+        this.premiumAmount= this.service.plan(this.plan,this.term);
       }
   }

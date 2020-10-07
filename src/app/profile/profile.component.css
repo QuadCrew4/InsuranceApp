@@ -29,3 +29,7 @@
 .buttonimg1:hover {
   background-color: #555;
 }
+
+.navbar-nav{
+  margin-left: 1200px;
+}
