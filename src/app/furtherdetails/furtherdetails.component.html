@@ -1,4 +1,4 @@
-	<h3>Claim Insurance</h3>
+	<!-- <h3>Claim Insurance</h3> -->
 	<div class="sai" >
 		<div class="container">
 			<div class="row">
@@ -38,7 +38,7 @@
 					class="form-control"
 					[ngClass]="{'is-invalid':bankDetailsForm.get('confirmaccountno').errors && bankDetailsForm.get('confirmaccountno').touched}"
 					id="confirmaccountno" [(ngModel)]=bank.confirmaccountno
-					placeholder="Re-Enter Account Number">
+					placeholder="Confirm Account Number">
 					<div class="invalid-feedback" *ngIf="bankDetailsForm.get('confirmaccountno').hasError('accountnoMismatch')">
 						Account Number Doesn't Match
 					</div>

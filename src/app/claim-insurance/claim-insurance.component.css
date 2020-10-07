@@ -1,6 +1,8 @@
-    .sai
-    {
-        background-image: url('src/assets/images2/insure2.jpg');
-    background-size: 100%;
-    
-    }
+        .sai
+        {
+        background-image: url('src/assets/images2/accident8.jpg');
+        background-size: 100%;
+        background-position-y: 10%;
+        color: white;
+        
+        }

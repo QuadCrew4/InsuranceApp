@@ -26,8 +26,8 @@
             constructor(private service:RenewalService, private insser:InsuranceService ,private router:Router, public formBuilder: FormBuilder,private customValidator:CustomValidationService){
             
               this.bankDetailsForm = this.formBuilder.group({
-                phoneno:["",[Validators.required,Validators.pattern("[0-9]{10}")]],
-                IFSCcode: ["",[Validators.required,Validators.pattern("[A-Z]{4}[0-9]{7,}")]],
+                phoneno:["",[Validators.required,Validators.pattern("[6-9]{1}[0-9]{9}")]],
+                IFSCcode: ["",[Validators.required,Validators.pattern("[A-Z]{4}[0-9]{6,}")]],
                 holdername:["", [Validators.required,Validators.pattern("[A-Za-z]{3,}")]],
                 accountno: ["",[Validators.required,Validators.pattern("[0-9]{8,}")]],
                 confirmaccountno: ["",[Validators.required]]

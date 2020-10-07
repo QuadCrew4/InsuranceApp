@@ -1,4 +1,10 @@
 .jumbotron
 {
-    background-image: url('src/assets/images2/insure2.jpg');
-}
+
+        background-image: url('src/assets/images2/accident4.jpg');
+    background-size: 100%;
+    background-position-y: 0%;
+     color: white;
+    
+    
+    }

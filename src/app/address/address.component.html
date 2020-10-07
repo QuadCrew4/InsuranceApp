@@ -1,4 +1,4 @@
-<h3>Claim Insurance</h3>
+
 <div class="jumbotron">
     <div class="row">
         <div class="col-md-10 mx-auto">
@@ -39,7 +39,7 @@
         <div class="col-sm-6">
             <label for="inputAddressLine1"><b>Address</b></label>
             <input type="text" class="form-control" [(ngModel)]=address.street name="inputAddressLine1"
-            placeholder="Street Address"   required pattern="[A-Za-z]{5,}" #street='ngModel' >
+            placeholder="Street Address"   required pattern="[A-Za-z- ,0-9]{5,}" #street='ngModel' >
             <span *ngIf="street.touched && street.invalid" class="alert-danger">Invalid Street Name</span>
         </div>
         <div class="col-sm-6">
@@ -53,14 +53,50 @@
         <div class="col-sm-6">
             <label for="inputCity"><b>City</b></label>
             <input type="text" class="form-control" name="inputCity" 
-            [(ngModel)]=address.city placeholder="City" pattern="[A-Za-z]{5,}" #city='ngModel'>
+            [(ngModel)]=address.city placeholder="City" pattern="[A-Za-z]{4,}" #city='ngModel'>
             <span *ngIf="city.touched && city.invalid" class="alert-danger">Invalid City</span>
         </div>
         <div class="col-sm-3">
             <label for="inputState"><b>State</b></label>
-            <input type="text" class="form-control" name="inputState" 
-            [(ngModel)]=address.state placeholder="State" required pattern="[A-Za-z]{5,}" #state='ngModel'>
-            <span *ngIf="state.touched && state.invalid" class="alert-danger">Invalid State</span>  
+            <select name="state" id="state" class="form-control" name="inputState"  [(ngModel)]=address.state>
+                <option [value]="EnterState" selected disabled>State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+                </select>
         </div>
         <div class="col-sm-3">
             <label for="inputPostalCode"><b>Postal Code</b></label>

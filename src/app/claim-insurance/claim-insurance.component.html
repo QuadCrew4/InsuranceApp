@@ -1,21 +1,22 @@
-<h3>Claim Insurance</h3>
+
     <div  class="sai">
+        <!-- <h3>Claim Insurance</h3> -->
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <h4 style="text-align: center; padding-top: 20px;"><u>Step 1</u></h4>
     <form (ngSubmit)="proceedNext()" #addForm="ngForm">   
         <div class='form-group'>
-            <label for="policyNo"><strong>Policy No.</strong></label>
+            <label for="policyNo"><strong>Policy Number</strong></label>
             <input class="form-control" name="policyNo" [(ngModel)]=policyNo
-            required pattern="[A-Za-z0-9_]{1,}" placeholder="Enter Your Policy Number" #policyN='ngModel'>
+            required pattern="[PN_]{3}[0-9]{3,}" placeholder="Enter Your Policy Number" #policyN='ngModel'>
             <span *ngIf="policyN.touched && policyN.invalid" class="alert-danger">Invalid Policy Number</span>
         </div>
     
         <div class='form-group'>
-            <label for="vehicleno"><strong>Vehicle No.</strong></label>
+            <label for="vehicleno"><strong>Vehicle Registration Number</strong></label>
             <input class="form-control" name="vehicleno" [(ngModel)]=vehicleno
-            required pattern="[A-Z0-9]{4,}" placeholder="Enter Your Vehicle Number" #vehiclen='ngModel'>
+            required pattern="[A-Z0-9]{4,}" placeholder="Enter Your Vehicle Registration Number" #vehiclen='ngModel'>
             <span *ngIf="vehiclen.touched && vehiclen.invalid" class="alert-danger">Invalid Vehicle Number</span>
         </div>
     

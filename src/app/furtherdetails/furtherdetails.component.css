@@ -7,7 +7,12 @@
     input.ng-touched.ng-invalid {
       border: 1px solid red;
     }
-  .sai
-  {
-      background-image: url('src/assets/images2/insure2.jpg');
-  }
+    .sai
+    {
+        background-image: url('src/assets/images2/accident6.jpg');
+    background-size: 100%;
+    background-position-y: 0%;
+    color: white;
+    
+    
+    }
