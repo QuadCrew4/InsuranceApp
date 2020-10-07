@@ -1,15 +1,16 @@
-<div class="editForm">
+<div class="edit-form">
     <div class="child">
         <form (ngSubmit)="updateClaim()" #editForm="ngForm">
             <table class="table table-bordered">
                 <thead><tr><th colspan="2">Claim Details</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Amount</td>
+                    <tr><td>Set Amount</td>
                         <td><input name="empid" [(ngModel)]=policy.claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
                         <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount is invalid</span></td>
                     </tr>
-                    <tr><td>Status</td>
+                    <tr>
+                        <td>Set Status</td>
                         <td><select name="status" [(ngModel)]=policy.claim.status #stat="ngModel">
                             <option value="pending" selected>Pending</option>
                             <option value="approved">Approved</option>

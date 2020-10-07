@@ -48,12 +48,17 @@
                         <tbody>
                                 <tr>
                                     <td>Claim Amount</td>
-                                    <td>{{policy.claim.amount}}</td>
+                                    <td>{{policy.claim.amount |currency:'INR':'symbol':'1.2-2'}}</td>
                                 </tr>
         
                                 <tr>
                                     <td>Claim Vehicle Number</td>
                                     <td>{{policy.vehicle.regNo}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Vehicle Model</td>
+                                    <td>{{policy.vehicle.manufacturer}} {{policy.vehicle.model}}</td>
                                 </tr>
                 
                                 <tr>

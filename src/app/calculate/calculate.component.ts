@@ -18,8 +18,8 @@
     
       ngOnInit() {
       }
-      async calculatePremium(){ 
-        this.insuranceAmount= await this.service.calculate(this.vehicleno,this.plan,this.age);
-        this.premiumAmount= await this.service.plan(this.plan);
+      calculatePremium(){ 
+        this.insuranceAmount= this.service.calculate(this.vehicleno,this.plan,this.age);
+        this.premiumAmount= this.service.plan(this.plan);
       }
   }
