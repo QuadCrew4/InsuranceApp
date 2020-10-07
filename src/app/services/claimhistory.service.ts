@@ -8,7 +8,7 @@ import { Policy } from '../policy.model';
   providedIn: 'root'
 })
 export class ClaimhistoryService {
-  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+  private baseUrl: string = "http://localhost:9090";
   constructor(private http : HttpClient) { }
 
     findPolicies(username : string):Observable<Policy[]>{

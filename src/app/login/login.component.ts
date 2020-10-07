@@ -27,6 +27,7 @@
       
       localStorage.setItem("uname",this.user.name);
       localStorage.setItem("username",this.user.username);
+      localStorage.setItem("email",this.user.email);
 
     
       if(this.role =="Admin" && this.user.username == "admin" && this.user.password == "YWRtaW4xMjM=")

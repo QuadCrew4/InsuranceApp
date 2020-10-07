@@ -17,13 +17,13 @@
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="email" class="form-control" name="email" [(ngModel)]=user.email placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #em="ngModel">
+            <input type="text" class="form-control" name="inputemail" [(ngModel)]=user.email placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #em="ngModel">
             <span class="alert-warning" *ngIf="em.touched && em.invalid">Email is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="date" class="form-control" [(ngModel)]=user.dob>
+            <input type="date" name= "date" class="form-control" [(ngModel)]=user.dob>
           </div>
         </div>
         <div class="form-group">

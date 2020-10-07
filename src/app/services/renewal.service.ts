@@ -8,7 +8,7 @@
   })
   export class RenewalService {
 
-  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+  private baseUrl: string = "http://localhost:9090";
   expDate : string;
 
     constructor(private http: HttpClient) { }

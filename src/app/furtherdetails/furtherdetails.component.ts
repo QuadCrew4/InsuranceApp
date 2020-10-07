@@ -60,6 +60,7 @@
           
               alert(`
                     Claimed Succesfully
+                    Mail Sent
                       `);
               this.router.navigate(['pdf']);
   

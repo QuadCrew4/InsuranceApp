@@ -19,8 +19,9 @@ export class BuyerService {
   Amount : number;
   vage : number;
   monthlyAmount: number;
+  email: string;
 
-  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+  private baseUrl: string = "http://localhost:9090";
 
 
   constructor(private router : Router,private http: HttpClient) { }
@@ -33,10 +34,11 @@ export class BuyerService {
     return this.http.get<User>(this.baseUrl+"/fetch/"+username);;
   }
 
-  addUserPolicy(p : Policy, user : User){
+  addUserPolicy(p : Policy, user : User, price : number){
     this.username = localStorage.getItem("username");
     this.regNo =  localStorage.getItem("regNo");
-    this.http.post(this.baseUrl+"/addpolicy/"+this.username+","+this.regNo,p).subscribe(data => data = user);
+    this.email = localStorage.getItem("email");
+    this.http.post(this.baseUrl+"/addpolicy/"+this.username+","+this.regNo+","+this.email+","+price,p).subscribe(data => data = user);
   }
 
   find(regNo: string): Observable<Vehicle>{

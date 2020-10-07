@@ -11,7 +11,7 @@ import { ClaimPdf } from '../ClaimPdf.model';
             providedIn: 'root'
           })
           export class InsuranceService {
-            private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+            private baseUrl: string = "http://localhost:9090";
             
             vehicle = new Vehicle;
 
@@ -21,6 +21,7 @@ import { ClaimPdf } from '../ClaimPdf.model';
 
             vage : number;
             accountno:String="20202020";
+            email : string;
 
 
             constructor(private http : HttpClient) { }
@@ -29,7 +30,8 @@ import { ClaimPdf } from '../ClaimPdf.model';
             }
             saveBank(username:string,policyNo:string,bank:ClaimInsurance)
             {
-              this.http.post(this.baseUrl+"/addclaim/"+username+","+policyNo,bank).subscribe(data => data = bank);
+              this.email = localStorage.getItem("email");
+              this.http.post(this.baseUrl+"/addclaim/"+username+","+policyNo+","+this.email+","+bank.amount,bank).subscribe(data => data = bank);
             }
 
             

@@ -11,7 +11,7 @@ import { profileModel } from "../profile.model";
 })
 export class ProfileService {
 
-  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+  private baseUrl: string = "http://localhost:9090";
 
 
   constructor(private http: HttpClient, private router : Router) { }

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private baseUrl: string = "http://localhost:8080/Insurance_projectGladiator/rest";
+  private baseUrl: string = "http://localhost:9090";
   users: User;
   constructor(private router: Router, private http: HttpClient) { }
 
