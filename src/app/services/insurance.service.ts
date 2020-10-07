@@ -54,10 +54,10 @@ import { ClaimPdf } from '../ClaimPdf.model';
             }
 
             plan(plan: string, term : number) : number{
-              if(plan=='Comprehensive')
-                this.premiumAmount=(this.insurancePrice/ (term*12))+(0.03*this.insurancePrice);
+              if(plan == "Comprehensive")
+                this.premiumAmount= ((this.insurancePrice + (this.insurancePrice*0.15*term))/(term*12));
               else
-                this.premiumAmount=(this.insurancePrice/ (term*12))+(0.01*this.insurancePrice);
+                this.premiumAmount= ((this.insurancePrice + (this.insurancePrice*0.12*term))/(term*12));
               return this.premiumAmount;
             }
 

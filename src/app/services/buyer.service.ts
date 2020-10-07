@@ -60,25 +60,27 @@ export class BuyerService {
   }
 
   planTerm(p : Policy) : number{
-    if(p.type === 'comprehensive' && p.term == 1)
-      this.Amount = this.insurancePrice * 0.15 * 1;
-    if(p.type === 'comprehensive' && p.term == 2)
-      this.Amount = this.insurancePrice * 0.15 * 2;
-    if(p.type === 'comprehensive' && p.term == 3)
-      this.Amount = this.insurancePrice * 0.15 * 3;
+    if(p.type === 'comprehensive')
+      this.Amount = this.insurancePrice + (this.insurancePrice*0.15*p.term);
+    else
+      this.Amount = this.insurancePrice + (this.insurancePrice*0.12*p.term);
+    // if(p.type === 'comprehensive' && p.term == 2)
+    //   this.Amount = this.insurancePrice * 0.15 * 2;
+    // if(p.type === 'comprehensive' && p.term == 3)
+    //   this.Amount = this.insurancePrice * 0.15 * 3;
 
-    if(p.type ==='third party' && p.term == 1)
-      this.Amount = this.insurancePrice * 0.12 * 1;
-    if(p.type ==='third party' && p.term == 2)
-      this.Amount = this.insurancePrice * 0.12 * 2;
-    if(p.type ==='third party' && p.term == 3)
-      this.Amount = this.insurancePrice * 0.12 * 3;
+    // if(p.type ==='third party' && p.term == 1)
+    //   this.Amount = this.insurancePrice * 0.12 * 1;
+    // if(p.type ==='third party' && p.term == 2)
+    //   this.Amount = this.insurancePrice * 0.12 * 2;
+    // if(p.type ==='third party' && p.term == 3)
+    //   this.Amount = this.insurancePrice * 0.12 * 3;
 
     return this.Amount;
   }
 
   installment(p : Policy) : number{
-    this.monthlyAmount = this.Amount/(p.term*12);
+    this.monthlyAmount = this.Amount/ (p.term *12);
     return this.monthlyAmount;
   }
 
