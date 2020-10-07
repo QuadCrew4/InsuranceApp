@@ -18,6 +18,9 @@ export class PlanComponent implements OnInit {
   year:number;
   username : string;
   user: User;
+  insuranceAmount : number;
+  Amount : number;
+  vehicleno:string;
   
 
   constructor(private router : Router, private service:  BuyerService) { 
@@ -31,8 +34,10 @@ export class PlanComponent implements OnInit {
   }
 
   quote(){
-    
-    this.router.navigate(['calculate']);
+    this.vehicleno = localStorage.getItem("regNo");
+    this.insuranceAmount=  this.service.calculateIDV(this.vehicleno,this.p);
+    this.Amount= this.service.planTerm(this.p);
+    //this.router.navigate(['calculate']);
   }
 
   pay(){

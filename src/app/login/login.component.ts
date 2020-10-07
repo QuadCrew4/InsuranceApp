@@ -29,7 +29,7 @@
       localStorage.setItem("username",this.user.username);
 
     
-      if(this.role =="Admin")
+      if(this.role =="Admin" && this.user.username == "admin" && this.user.password == "YWRtaW4xMjM=")
       {
         alert('Admin successfully Logged in')
         this.router.navigate(['admin']);

@@ -24,6 +24,8 @@ export class BuyComponent implements OnInit {
 
       });
     });
+
+    
   }
 
   searchNo(){

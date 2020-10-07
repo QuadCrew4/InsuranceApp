@@ -1,23 +1,31 @@
-
-    <form (ngSubmit)="updateClaim()" #editForm="ngForm">
-        <table class="table table-bordered">
-            <thead><tr><th colspan="2">Claim Details</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Amount</td>
-                    <td><input name="empid" [(ngModel)]=policy.claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
-                    <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount</span></td>
-                </tr>
-                <tr><td>Status</td>
-                    <td><input name="ename" [(ngModel)]=policy.claim.status required pattern="[A-Za-z]{3,}" placeholder="Enter Status" #ename="ngModel">
-                        <span class="alert-warning" *ngIf="ename.touched && ename.invalid">Status is invalid</span>
-                    </td>
-                </tr>
-                <tr>
-                    <th colspan="2">
-                        <button class="btn btn-success" type="submit" [disabled]="!editForm.valid">Edit Claim</button>
-                    </th>
-                </tr>
-            </tbody>
-        </table>
-    </form>
+<div class="edit-form">
+    <div class="child">
+        <form (ngSubmit)="updateClaim()" #editForm="ngForm">
+            <table class="table table-bordered">
+                <thead><tr><th colspan="2">Claim Details</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Set Amount</td>
+                        <td><input name="empid" [(ngModel)]=policy.claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
+                        <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount is invalid</span></td>
+                    </tr>
+                    <tr>
+                        <td>Set Status</td>
+                        <td><select name="status" [(ngModel)]=policy.claim.status #stat="ngModel">
+                            <option value="pending" selected>Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                            <span class="alert-warning" *ngIf="stat.touched && stat.invalid">Status is invalid</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <button class="btn btn-success" type="submit" [disabled]="!editForm.valid">Edit Claim</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

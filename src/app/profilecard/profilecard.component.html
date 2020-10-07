@@ -1,3 +1,5 @@
+<!--
+
 
 <div class="bg-contact3" style="background-image: url('../../assets/images/bg-02.jpg');">
 
@@ -14,7 +16,7 @@
   </div>
   
   
-  <!-- Button trigger modal -->
+  
   <button type="button" class="btn btn-primary" (click)="searchName()" 
   data-toggle="modal" data-target="#exampleModal" 
   style="margin-left: 50%; margin-top: 5%; margin-bottom: 5%;">
@@ -23,7 +25,7 @@
   
   </div>
    
-    <!-- Modal -->
+    
     
   
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -66,4 +68,41 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>   -->
+
+    <body class="sb-nav-fixed">
+      <div id="layoutSidenav_content">
+          <main>
+              <div class="container-fluid">
+                  <h1 class="mt-4">User Dashboard</h1>
+                  <ol class="breadcrumb mb-4">
+                      <li class="breadcrumb-item active">
+                        <p class="lead">Welcome to  your profile, <b>{{ name }}</b></p>
+                      </li>
+                  </ol>
+                <table class="table table-stripped table-primary" style="width: 60%;margin-left: 20%;">
+                  <thead>
+                    <tr>
+                      <th>Policy No.</th>
+                      <th>Vehicle Registration No.</th>
+                      <th>Expiry Date</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let pol of policies">
+                      <td>{{pol.policyNo}}</td>
+                      <td>{{pol.vehicle.regNo}}</td>
+                      <td>{{pol.expDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <button type="button" class="btn btn-primary" (click)="back()"
+                style="margin-left: 45%;margin-bottom: 2%;">Back to Profile</button>
+              </div>
+          </main>
+        </div>
+      </body>
+
+
+
