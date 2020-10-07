@@ -9,8 +9,8 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>PolicyNo</th>
-                            <th>ClaimNo</th>
+                            <th>Policy Number</th>
+                            <th>Claim Number</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -21,6 +21,8 @@
                             <td *ngIf= "pol.claim != null">{{pol.claim.claimId}}</td>
                             <td *ngIf= "pol.claim != null">{{pol.claim.status}}</td>
                             <td *ngIf= "pol.claim != null">
+                                <button type="button" class="btn btn-primary"
+                                    data-toggle="modal" data-target="#exampleModal"(click)="showClaim(pol.policyNo)">Show</button>&nbsp;&nbsp;
                                 <button class="btn btn-success" (click)="editClaim(pol.policyNo)">Edit</button></td>
                         </tr>
                     </tbody>
@@ -28,6 +30,47 @@
             </div>
         </main>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" style="background-image: url('../../assets/images/bg-03.jpg');">
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalLabel" 
+              style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Claim Details</h1>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                
+                    <table class="table table-dark table stripped">
+                      <thead></thead>
+                        <tbody>
+                                <tr>
+                                    <td>Claim Amount</td>
+                                    <td>{{policy.claim.amount}}</td>
+                                </tr>
+        
+                                <tr>
+                                    <td>Claim Vehicle Number</td>
+                                    <td>{{policy.vehicle.regNo}}</td>
+                                </tr>
+                
+                                <tr>
+                                    <td>Claim Reason</td>
+                                    <td>{{policy.claim.reason}}</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                  
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+  </div>    
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/scripts.js"></script>

@@ -33,4 +33,8 @@ export class AdminService {
   {
     this.router.navigate(['editclaim'],{queryParams: {index: index}});
   }
+
+  show(index: number):Observable<Policy>{
+    return this.http.get<Policy>(this.baseUrl+"/fetchpolicy/"+index);
+  }  
 }

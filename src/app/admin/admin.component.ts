@@ -13,23 +13,18 @@ import { User } from '../user.model';
 export class AdminComponent implements OnInit {
 
   policies: Policy[] = [];
+  policy: Policy;
   constructor(private router: Router, private service: LoginService, private admin: AdminService) { }
 
   ngOnInit() {
+    this.policy= new Policy;
     this.admin.getPolicies().subscribe(data => this.policies = data);
   }
 
   editClaim(index : number){
     this.admin.edit(index);
   }
-  // delete(index : number) {
-  //   var ans = confirm("Are you sure you want to delete?");
-  //   if(ans) {
-  //     this.service.deleteUser(index);
-  //   }
-  // }
-  // editUser(index : number)
-  // {
-  //   this.service.edit(index);
-  // }
+  showClaim(index: number){
+    this.admin.show(index).subscribe(data => this.policy = data);
+  }
 }
