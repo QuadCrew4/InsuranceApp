@@ -9,8 +9,8 @@
                     <td>{{claimDate |  date: 'dd/MM/yyyy'}}</td>
                 </tr>
                 <tr *ngFor="let pol of policies">
-                    <th>Claim ID</th>
-                    <td>{{pol.claim.claimId}}</td>
+                    <th *ngIf="pol.claim != null && pol.policyNo == policyNo">Claim ID</th>
+                    <td *ngIf="pol.claim != null && pol.policyNo == policyNo">{{pol.claim.claimId}}</td>
                 </tr>
                 <tr>
                     <th>Account Number</th>

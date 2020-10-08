@@ -23,7 +23,8 @@
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="date" name= "date" class="form-control" [(ngModel)]=user.dob>
+            <input type="date" name= "date" class="form-control" [(ngModel)]=user.dob required #dob="ngModel">
+            <span class="alert-warning" *ngIf="dob.touched && dob.invalid">Date of Birth is invalid</span>
           </div>
         </div>
         <div class="form-group">
@@ -40,13 +41,13 @@
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="password" class="form-control" name="password" [(ngModel)]=user.password placeholder="Password (Should be 8 charcters long)" required pattern="[A-Za-z0-9]{8}" #ps="ngModel">
-            <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password is invalid</span>
+            <input type="password" class="form-control" name="password" [(ngModel)]=user.password placeholder="Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" #ps="ngModel">
           </div>
+          <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password with at least 8 characters long and should contain one number,one character and one special character.</span>
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="password" class="form-control" name="confirmpassword" [(ngModel)]=conpassword placeholder="Confirm Password (Should be 8 charcters long)" required pattern="{{user.password}}" #conps="ngModel">
+            <input type="password" class="form-control" name="confirmpassword" [(ngModel)]=conpassword placeholder="Confirm Password" required pattern="{{user.password}}" #conps="ngModel">
             <span class="alert-warning" *ngIf="conps.touched && conps.invalid">Password should be same</span>
           </div>
         </div>

@@ -18,10 +18,9 @@
     }
 
     renew(user : User, policyNo: string){
-      // this.expDate = localStorage.getItem("expDate");
-      // var date = new Date(this.expDate);
-      // date.setDate(date.getDate() + (365*3));
-      // this.expDate = date.toLocaleDateString();
-      return  this.http.put(this.baseUrl+"/renewpolicy/"+user.username+","+policyNo+","+"12-10-2025",user).subscribe(data => data = user);
+      var date = new Date(this.expDate);
+      date.setDate(date.getDate() + (365*5));
+      this.expDate = date.toLocaleDateString();
+      return  this.http.put(this.baseUrl+"/renewpolicy/"+user.username+","+policyNo,user).subscribe(data => data = user);
   }
 }

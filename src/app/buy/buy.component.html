@@ -19,14 +19,15 @@
       <div class="searchbar">      
         <input class="search_input" type="text" placeholder="Eg, JH05AY5721" name="regno" 
             [(ngModel)]=regno1 #regn='ngModel' 
-            required pattern="^[A-Z]{2}\s[0-9]{2}\s[A-Z]{2}\s[0-9]{4}$">
-            
+            required pattern="[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}">
+            <span *ngIf="regn.touched && regn.invalid" class="alert-danger">Invalid vehicle Number</span>
              <button class="search_icon" type="button" (click)="searchNo()"
              data-toggle="collapse" data-target="#collapseExample" 
             aria-expanded="false" aria-controls="collapseExample"
-            [disabled]="!regn.touched">
+            [disabled]="!regn.touched || !regn.valid">
                 <i class="fa fa-search"></i>
             </button>
+            
       </div>
     </div>
   </div>
