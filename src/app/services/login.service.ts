@@ -34,7 +34,8 @@ export class LoginService {
       return result;
 
     }
-    reset(uname : string, password: string, user : User){
-      return this.http.put(this.baseUrl+"/resetpassword/"+uname+","+password,null).subscribe(data => data = user);
+    reset(uname : string, password: string, user : User, email : string){
+      console.log(user.email);
+      return this.http.put(this.baseUrl+"/resetpassword/"+uname+","+password+","+email,null).subscribe(data => data = user);
     }
   }

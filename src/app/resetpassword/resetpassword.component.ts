@@ -11,14 +11,15 @@ import { User } from '../user.model';
 export class ResetpasswordComponent implements OnInit {
   username: string;
   pwd: string;
-  user : User;
+  user = new User;
+  email : string;
   constructor(private router: Router, private service: LoginService) { }
 
   ngOnInit() {
   }
   resetPass(){
     this.service.findUser(this.username).subscribe(data => this.user = data);
-    this.service.reset(this.username,this.pwd, this.user);
+    this.service.reset(this.username,this.pwd, this.user, this.email);
     alert("Password successfully reset");
     this.router.navigate(['login']);
   }

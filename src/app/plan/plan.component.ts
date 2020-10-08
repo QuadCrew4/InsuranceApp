@@ -50,7 +50,7 @@ export class PlanComponent implements OnInit {
     date.setDate(date.getDate() + (365*this.p.term));
     this.p.expDate = date.toLocaleDateString();
     localStorage.setItem("expDate",this.p.expDate);
-    this.service.addUserPolicy(this.p,this.user,this.Amount);
+    this.service.addUserPolicy(this.p,this.user,this.monthlyAmount);
     alert(`
             Congratulations, your payment is successful.
             Mail Sent to registered email`

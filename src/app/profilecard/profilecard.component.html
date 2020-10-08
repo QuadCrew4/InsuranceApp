@@ -24,7 +24,7 @@
                       <td>{{pol.policyNo}}</td>
                       <td>{{pol.vehicle.regNo}}</td>
                       <td>{{pol.vehicle.manufacturer}} {{pol.vehicle.model}}</td>
-                      <td>{{pol.expDate}}</td>
+                      <td>{{pol.expDate |  date: 'dd/MM/yyyy'}}</td>
                     </tr>
                   </tbody>
                 </table>
