@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Policy } from '../policy.model';
 import { BuyerService } from '../services/buyer.service';
+import { PaymentService } from '../services/payment.service';
 import { User } from '../user.model';
 
 
@@ -27,10 +28,10 @@ export class PlanComponent implements OnInit {
   vehicleno:string;
   
 
-  constructor(private router : Router, private service:  BuyerService) { 
+  constructor(private router : Router, private service:  BuyerService, private payserv: PaymentService) { 
     this.p = new Policy;
     this.years = [1,2,3]
-    this.plans = ['third party' , 'comprehensive']
+    this.plans = ['Third party' , 'Comprehensive']
   }
 
   ngOnInit(): void {
@@ -50,11 +51,9 @@ export class PlanComponent implements OnInit {
     date.setDate(date.getDate() + (365*this.p.term));
     this.p.expDate = date.toLocaleDateString();
     localStorage.setItem("expDate",this.p.expDate);
-    this.service.addUserPolicy(this.p,this.user,this.monthlyAmount);
-    alert(`
-            Congratulations, your payment is successful.
-            Mail Sent to registered email`
-            );
-    this.router.navigate(['profile']);
+    this.payserv.setAmount(this.monthlyAmount);
+    this.payserv.setPolicy(this.p, this.user, this.monthlyAmount);
+    this.router.navigate(['payment']);
+    // this.service.addUserPolicy(this.p,this.user,this.monthlyAmount);
   }
 }

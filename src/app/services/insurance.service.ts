@@ -38,19 +38,19 @@ import { ClaimPdf } from '../ClaimPdf.model';
           
             
             
-            calculate(regNo : string, plan : string, age : string) : number{
-              if(age==="6 months")
-                this.vage=0.5;
-              else if(age=="one year")
-                this.vage=1;
-              else if(age=="two years")
-                this.vage=2;
-              else if(age == "three years")
-                this.vage=3;
-              else if (age == "more than 5")
-                this.vage=5;
-              this.find(regNo).subscribe(data => this.vehicle = data);
-              this.insurancePrice = (this.vehicle.price) - ((this.vehicle.price) * this.vage * 0.05)
+            calculate(regNo : string, plan : string, age : number, vprice: number) : number{
+              // if(age==="6 months")
+              //   this.vage=0.5;
+              // else if(age=="one year")
+              //   this.vage=1;
+              // else if(age=="two years")
+              //   this.vage=2;
+              // else if(age == "three years")
+              //   this.vage=3;
+              // else if (age == "more than 5")
+              //   this.vage=5;
+              // this.find(regNo).subscribe(data => this.vehicle = data);
+              this.insurancePrice = (vprice) - ((vprice) * age * 0.05)
 
               return this.insurancePrice;
             }

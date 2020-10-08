@@ -1,0 +1,53 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+</head>
+<body>
+	
+
+    <form #paymentForm="ngForm">
+    <div class="wrapper">
+      <div class="payment">
+        
+
+        <h2>Add Payment Details</h2>
+        <div class="form">
+          <div class="card space icon-relative">
+            <label class="label">Card holder:</label>
+            <input type="text" class="input" required pattern="[A-Za-z ]{3,}" name="holder" [(ngModel)]=holdername
+            placeholder="Holder Name" #holder='ngModel'>
+            <i class="fas fa-user"></i>
+          </div>
+          <span *ngIf="holder.touched && holder.invalid" class="alert-danger">Invalid Name</span>
+          <div class="card space icon-relative">
+            <label class="label">Card number:</label>
+            <input type="text" class="input" required pattern="[0-9]{16}" name="card" [(ngModel)]=cardnumber
+            data-mask="0000 0000 0000 0000" placeholder="Card Number" #card='ngModel'>
+            <i class="far fa-credit-card"></i>
+          </div>
+          <span *ngIf="card.touched && card.invalid" class="alert-danger">Invalid Card</span>
+          <div class="card-grp space">
+            <div class="card-item icon-relative">
+              <label class="label">Expiry date:</label>
+              <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
+              <i class="far fa-calendar-alt"></i>
+            </div>
+            <div class="card-item icon-relative">
+              <label class="label">CVC:</label>
+              <input type="text" class="input" name="cvc" [(ngModel)]=cvcnumber
+              data-mask="000"  required pattern="[0-9]{3}"  placeholder="000" #cvc='ngModel'>
+              <i class="fas fa-lock"></i>
+            </div>
+            <span *ngIf="cvc.touched && cvc.invalid" class="alert-danger">Invalid CVC</span>
+          </div>
+            
+          <button class="btn" (click)="pay()" [disabled]="!paymentForm.valid">
+           Pay&nbsp;{{amt |currency:'INR':'symbol':'1.2-2'}}/-
+          </button> 
+          
+        </div>
+      </div>
+    </div>
+    
+
+    </form>
+    </body>

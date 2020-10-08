@@ -18,6 +18,7 @@ import { ProfilecardComponent } from './profilecard/profilecard.component';
 import { EditclaimComponent } from './editclaim/editclaim.component';
 import { AddressComponent } from './address/address.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: 'address', component: AddressComponent},
   {path:'profilecard',component:ProfilecardComponent},
   {path:'resetpassword',component:ResetpasswordComponent},
+  {path:'payment',component:PaymentComponent},
   {path:'**', redirectTo:'/home', pathMatch:'full'}
 ];
 

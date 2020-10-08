@@ -20,7 +20,7 @@ export class ResetpasswordComponent implements OnInit {
   resetPass(){
     this.service.findUser(this.username).subscribe(data => this.user = data);
     this.service.reset(this.username,this.pwd, this.user, this.email);
-    alert("Password successfully reset");
+    // alert("Password successfully reset");
     this.router.navigate(['login']);
   }
 }

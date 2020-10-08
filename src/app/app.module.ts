@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditclaimComponent } from './editclaim/editclaim.component';
 import { AddressComponent } from './address/address.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     ProfilecardComponent,
     EditclaimComponent,
     AddressComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

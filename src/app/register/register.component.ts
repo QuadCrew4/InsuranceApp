@@ -18,10 +18,10 @@ export class RegisterComponent implements OnInit {
   registerUser(){
     this.service.registerUser(this.user);
     // this.mail.registerMail(this.user.email,this.user.username);
-    alert(`
-            User Successfully Registered 
-            Welcome Mail Sent to email`
-            ); 
+    // alert(`
+    //         User Successfully Registered 
+    //         Welcome Mail Sent to email`
+    //         ); 
     this.router.navigate(['login']);
   }
 }

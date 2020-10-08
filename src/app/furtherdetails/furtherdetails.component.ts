@@ -58,10 +58,10 @@
           
             this.service.findUser(this.username).subscribe(data => this.user = data);
           
-              alert(`
-                    Claimed Succesfully
-                    Mail Sent
-                      `);
+              // alert(`
+              //       Claimed Succesfully
+              //       Mail Sent
+              //         `);
               this.router.navigate(['pdf']);
   
              
