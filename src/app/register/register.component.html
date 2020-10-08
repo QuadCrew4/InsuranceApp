@@ -6,49 +6,49 @@
         <div class="form-group">
           <div class="input-group">
             <input type="text" class="form-control" name= "username" [(ngModel)]=user.username placeholder="Username" required pattern="[A-Za-z0-9]{4,8}" #un1="ngModel">
-            <span class="alert-warning" *ngIf="un1.touched && un1.invalid">username is invalid</span>
+            <span class="alert-danger" *ngIf="un1.touched && un1.invalid">username is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <input type="text" class="form-control" name= "name" [(ngModel)]=user.name placeholder="Name" required pattern="[A-Za-z ]{4,}" #n1="ngModel">
-            <span class="alert-warning" *ngIf="n1.touched && n1.invalid">name is invalid</span>
+            <span class="alert-danger" *ngIf="n1.touched && n1.invalid">name is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <input type="text" class="form-control" name="inputemail" [(ngModel)]=user.email placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #em="ngModel">
-            <span class="alert-warning" *ngIf="em.touched && em.invalid">Email is invalid</span>
+            <span class="alert-danger" *ngIf="em.touched && em.invalid">Email is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <input type="date" name= "date" class="form-control" [(ngModel)]=user.dob required #dob="ngModel">
-            <span class="alert-warning" *ngIf="dob.touched && dob.invalid">Date of Birth is invalid</span>
+            <span class="alert-danger" *ngIf="dob.touched && dob.invalid">Date of Birth is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <input type="text" class="form-control" name="mobile" [(ngModel)]=user.mobile placeholder="Contact Number" required pattern="[0-9]{10}" #mb="ngModel">
-            <span class="alert-warning" *ngIf="mb.touched && mb.invalid">Contact no is invalid</span>
+            <span class="alert-danger" *ngIf="mb.touched && mb.invalid">Contact no is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             <input type="text" class="form-control" name="address" [(ngModel)]=user.address  placeholder="Address" required pattern="[A-Za-z0-9 ,-/]{10,}" #ad="ngModel">
-            <span class="alert-warning" *ngIf="ad.touched && ad.invalid">Address is invalid</span>
+            <span class="alert-danger" *ngIf="ad.touched && ad.invalid">Address is invalid</span>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="password" class="form-control" name="password" [(ngModel)]=user.password placeholder="Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" #ps="ngModel">
+            <input type="password" class="form-control" name="password" [(ngModel)]=user.password placeholder="Password ex: Abcdef@1" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" #ps="ngModel">
           </div>
-          <span class="alert-warning" *ngIf="ps.touched && ps.invalid">Password with at least 8 characters long and should contain one number,one character and one special character.</span>
+          <span class="alert-danger" *ngIf="ps.touched && ps.invalid">Password with at least 8 characters long with proper pattern</span>
         </div>
         <div class="form-group">
           <div class="input-group">
             <input type="password" class="form-control" name="confirmpassword" [(ngModel)]=conpassword placeholder="Confirm Password" required pattern="{{user.password}}" #conps="ngModel">
-            <span class="alert-warning" *ngIf="conps.touched && conps.invalid">Password should be same</span>
+            <span class="alert-danger" *ngIf="conps.touched && conps.invalid">Password should be same</span>
           </div>
         </div>
           <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Register</button>

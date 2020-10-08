@@ -14,11 +14,11 @@
       <div class="card h-100">
         <img class="card-img-top" src="../../assets/profile.png" alt="">
         <div class="card-body">
-          <h4 class="card-title">Profile</h4>
+          <a class="btn" (click)="profile()"><h4 class="card-title">{{name}}</h4></a>
           <p class="card-text" style="color: black;"><b>Check out Your Profile</b></p>
         </div>
         <div class="card-footer">
-          <a class="btn btn-primary" (click)="profile()">Click Here!</a>
+          <a class="btn btn-primary" (click)="logout()">Logout</a>
         </div>
       </div>
     </div>
@@ -27,13 +27,13 @@
       <div class="card h-100">
         <img class="card-img-top" src="../../assets/buy.jpg" alt="">
         <div class="card-body">
-          <h4 class="card-title">Buy Insurance</h4>
+          <a class="btn" (click)="buy()"><h4 class="card-title">Buy Insurance</h4></a>
           <br>
           <br>
           <p class="card-text" style="color: black;"><b>Buy your perfect vehicle insurance with the perfect plan</b></p>
         </div>
         <div class="card-footer">
-          <a class="btn btn-primary" (click)="buy()">Click Here!</a>
+          <a class="btn btn-primary" (click)="buy()">Buy Insurance</a>
         </div>
       </div>
     </div>
@@ -42,28 +42,27 @@
       <div class="card h-100">
         <img class="card-img-top" src="../../assets/claim.jpg" alt="">
         <div class="card-body">
-          <h4 class="card-title">Claim Insurance</h4>
+          <a class="btn" (click)="claim()"><h4 class="card-title">Claim Insurance</h4></a>
           <br>
           <br>
           <p class="card-text" style="color: black;"><b>Claim your vehicle insurance</b></p>
         </div>
         <div class="card-footer">
-          <a class="btn btn-primary" (click)="claim()">Click Here!</a>
+          <a class="btn btn-primary" (click)="claim()">Claim Insurance</a>
         </div>
       </div>
     </div>
-
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="card h-100">
         <img class="card-img-top" src="../../assets/renew.jpg" alt="">
         <div class="card-body">
-          <h4 class="card-title">Renew Insurance</h4>
+          <a class="btn" (click)="renew()"><h4 class="card-title">Renew Insurance</h4></a>
           <br>
           <br>
           <p class="card-text" style="color: black;"><b>Expiry date nearby, renew in just a few clicks</b></p>
         </div>
         <div class="card-footer">
-          <a class="btn btn-primary" (click)="renew()">Click Here!</a>
+          <a class="btn btn-primary" (click)="renew()">Renew Insurance</a>
         </div>
       </div>
     </div>
@@ -72,13 +71,13 @@
       <div class="card h-100">
         <img class="card-img-top" src="../../assets/history.png" alt="">
         <div class="card-body">
-          <h4 class="card-title">Claim History</h4>
+          <a class="btn" (click)="history()"><h4 class="card-title">Claim History</h4></a>
           <br>
           <br>
           <p class="card-text" style="color: black;"><b>Check out your claim history</b></p>
         </div>
         <div class="card-footer">
-          <a class="btn btn-primary" (click)="history()">Click Here!</a>
+          <a class="btn btn-primary" (click)="history()">Check History</a>
         </div>
       </div>
     </div>

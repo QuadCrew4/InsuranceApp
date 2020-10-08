@@ -35,5 +35,7 @@ export class ProfileComponent implements OnInit {
   profile(){
     this.router.navigate(['profilecard']);
   }
- 
+  logout(){
+    this.router.navigate(['login']);
+  }
 }

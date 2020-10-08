@@ -12,11 +12,11 @@
     <form (ngSubmit)="loggedIn()" #loginForm="ngForm">
 
       <input type="text" id="login" class="fadeIn second" [(ngModel)]=login.username name="username" placeholder="username" required pattern="[A-Za-z0-9]{4,8}" #un="ngModel">
-      <span class="alert-warning" *ngIf="un.touched && un.invalid">username is invalid</span>
+      <span class="alert-danger" *ngIf="un.touched && un.invalid">username is invalid</span>
       
       <input type="password" id="password" class="fadeIn third" [(ngModel)]=login.password name="password" placeholder="password" 
-      required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" #psw1="ngModel">
-      <span class="alert-warning" *ngIf="psw1.touched && psw1.invalid">password is invalid</span>
+      required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" #psw1="ngModel">
+      <span class="alert-danger" *ngIf="psw1.touched && psw1.invalid">password is invalid</span>
       <br>
       <select name="role" [(ngModel)]=role style="width: 40%; background-color: DodgerBlue; padding: 5px; margin: 10px;">
         <option [value]="User" selected>User</option>

@@ -12,9 +12,9 @@
                     <tr>
                         <td><strong>Set Status</strong></td>
                         <td><select name="status" [(ngModel)]=policy.claim.status #stat="ngModel">
-                            <option value="pending" selected>Pending</option>
-                            <option value="approved">Approved</option>
-                            <option value="rejected">Rejected</option>
+                            <option value="Pending" selected>Pending</option>
+                            <option value="Approved">Approved</option>
+                            <option value="Rejected">Rejected</option>
                         </select>
                             <span class="alert-warning" *ngIf="stat.touched && stat.invalid">Status is invalid</span>
                         </td>

@@ -35,7 +35,7 @@
       proceedNext() {
         var date=new Date();
         this.claimDate=date.toLocaleDateString();
-        this.status="pending";
+        this.status="Pending";
         localStorage.setItem("status",this.status);
         localStorage.setItem("reason",this.reason);
         localStorage.setItem("amount",this.amount);
