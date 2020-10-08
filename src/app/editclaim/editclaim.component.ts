@@ -27,5 +27,7 @@ export class EditclaimComponent implements OnInit {
     this.service.update(this.policy);
     this.router.navigate(['admin']);
   }
-
+  goBack(){
+    this.router.navigate(['admin']);
+  }
 }

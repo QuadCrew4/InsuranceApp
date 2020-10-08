@@ -25,5 +25,7 @@ export class RenewalComponent implements OnInit {
     alert("Policy Successfully renewed");
     this.router.navigate(['profile']);
   }
-
+  goBack(){
+    this.router.navigate(['profile']);
+  }
 }

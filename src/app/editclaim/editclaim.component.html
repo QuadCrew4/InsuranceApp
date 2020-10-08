@@ -1,16 +1,16 @@
-<div class="edit-form">
+<div class="edit-form" >
     <div class="child">
         <form (ngSubmit)="updateClaim()" #editForm="ngForm">
-            <table class="table table-bordered">
+            <table class="table-primary table table-bordered">
                 <thead><tr><th colspan="2">Claim Details</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Set Amount</td>
+                    <tr><td><strong>Set Amount</strong></td>
                         <td><input name="amount" [(ngModel)]=policy.claim.amount required  pattern="[0-9]{4,}" placeholder="ID" #id="ngModel">
                         <span class="alert-warning" *ngIf="id.touched && id.invalid">Amount is invalid</span></td>
                     </tr>
                     <tr>
-                        <td>Set Status</td>
+                        <td><strong>Set Status</strong></td>
                         <td><select name="status" [(ngModel)]=policy.claim.status #stat="ngModel">
                             <option value="pending" selected>Pending</option>
                             <option value="approved">Approved</option>
@@ -21,7 +21,8 @@
                     </tr>
                     <tr>
                         <th colspan="2">
-                            <button class="btn btn-success" type="submit" [disabled]="!editForm.valid">Edit Claim</button>
+                            <button class="btn btn-success" type="submit" [disabled]="!editForm.valid">Edit Claim</button>&nbsp;&nbsp;
+                            <button class="btn btn-primary" type="submit" (click)="goBack()">Back</button>
                         </th>
                     </tr>
                 </tbody>

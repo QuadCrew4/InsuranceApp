@@ -38,13 +38,13 @@
         <div class="col-sm-6">
             <label for="inputAddressLine1"><b>Address</b></label>
             <input type="text" class="form-control" [(ngModel)]=address.street name="inputAddressLine1"
-            placeholder="Street Address"   required pattern="[A-Za-z ,0-9]{5,}" #street='ngModel' >
+            placeholder="Street Address"   required pattern="[A-Za-z ,0-9-/]{5,}" #street='ngModel' >
             <span *ngIf="street.touched && street.invalid" class="alert-danger">Invalid Street Name</span>
         </div>
         <div class="col-sm-6">
             <label for="inputAddressLine2"><b>Address (Line 2)</b></label>
             <input type="text" class="form-control"  [(ngModel)]=address.landmark name="inputAddressLine2"
-            placeholder="Landmark" pattern="[A-Za-z ,0-9]{5,}" #landmark='ngModel'>
+            placeholder="Landmark" pattern="[A-Za-z ,0-9-/]{5,}" #landmark='ngModel'>
             <span *ngIf="landmark.touched && landmark.invalid" class="alert-danger">Invalid Landmark</span>
         </div>
     </div>
@@ -52,12 +52,12 @@
         <div class="col-sm-6">
             <label for="inputCity"><b>City</b></label>
             <input type="text" class="form-control" name="inputCity" 
-            [(ngModel)]=address.city placeholder="City" pattern="[A-Za-z]{4,}" #city='ngModel'>
+            [(ngModel)]=address.city placeholder="City" required pattern="[A-Za-z]{4,}" #city='ngModel'>
             <span *ngIf="city.touched && city.invalid" class="alert-danger">Invalid City</span>
         </div>
         <div class="col-sm-3">
             <label for="inputState"><b>State</b></label>
-            <select name="state" id="state" class="form-control" name="inputState"  [(ngModel)]=address.state>
+            <select name="state" id="state" class="form-control" name="inputState" required  [(ngModel)]=address.state #sta="ngModel">
                 <option [value]="EnterState" selected disabled></option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -96,6 +96,7 @@
                 <option value="Uttarakhand">Uttarakhand</option>
                 <option value="West Bengal">West Bengal</option>
                 </select>
+                <span *ngIf="sta.touched && sta.invalid" class="alert-danger">Invalid State</span>
         </div>
         <div class="col-sm-3">
             <label for="inputPostalCode"><b>Postal Code</b></label>

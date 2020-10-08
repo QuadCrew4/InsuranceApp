@@ -15,12 +15,15 @@
       insuranceAmount : number;
       premiumAmount : number;
     
-      constructor(private service : InsuranceService) { }
+      constructor(private service : InsuranceService, private router: Router) { }
     
       ngOnInit() {
       }
       calculatePremium(){ 
         this.insuranceAmount= this.service.calculate(this.vehicleno,this.plan,this.age);
         this.premiumAmount= this.service.plan(this.plan,this.term);
+      }
+      goHome(){
+        this.router.navigate(['home']);
       }
   }

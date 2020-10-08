@@ -44,7 +44,9 @@
         this.router.navigate(['address']);  
       }
       
-      
+      goProfile(){
+        this.router.navigate(['profilecard']);
+      }
 
     
     }

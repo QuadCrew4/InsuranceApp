@@ -18,11 +18,13 @@ import { Policy } from '../policy.model';
     policies : Policy[] = [];
     username : string;
 
-    constructor(private service : ClaimhistoryService) { }
+    constructor(private service : ClaimhistoryService, private router: Router) { }
 
     ngOnInit() {
       this.username = localStorage.getItem("username");
       this.service.findPolicies(this.username).subscribe(data => this.policies = data);
     }
-    
+    goBack(){
+      this.router.navigate(['profile']);
+    }
   }

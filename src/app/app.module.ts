@@ -17,7 +17,6 @@ import { AdminComponent } from './admin/admin.component';
 import { CalculateComponent } from './calculate/calculate.component';
 import { BuyComponent } from './buy/buy.component';
 import { PlanComponent } from './plan/plan.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { RenewalComponent } from './renewal/renewal.component';
 import { ProfilecardComponent } from './profilecard/profilecard.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -41,7 +40,6 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     CalculateComponent,
     BuyComponent,
     PlanComponent,
-    DashboardComponent,
     RenewalComponent,
     ProfilecardComponent,
     EditclaimComponent,

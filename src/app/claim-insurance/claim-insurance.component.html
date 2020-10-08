@@ -42,7 +42,9 @@
 
         
         <div class="col-md-12 text-center" style="padding-top: 18px; padding-bottom: 30px; ">
-        <button class="btn btn-primary btn-block btn-success" type="submit" [disabled]="!addForm.valid" >Proceed Next</button></div>
+        <button class="btn btn-primary btn-block btn-success" type="submit" [disabled]="!addForm.valid" >Proceed Next</button>
+        &nbsp;&nbsp;<button class="btn btn-primary btn-block btn-success" type="submit" (click)="goProfile()">Check Profile</button>
+    </div>
     </form>
 
     </div>
