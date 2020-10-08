@@ -34,7 +34,7 @@
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="text" class="form-control" name="address" [(ngModel)]=user.address  placeholder="Address" required pattern="[A-Za-z0-9 ,-]{10,}" #ad="ngModel">
+            <input type="text" class="form-control" name="address" [(ngModel)]=user.address  placeholder="Address" required pattern="[A-Za-z0-9 ,-/]{10,}" #ad="ngModel">
             <span class="alert-warning" *ngIf="ad.touched && ad.invalid">Address is invalid</span>
           </div>
         </div>
