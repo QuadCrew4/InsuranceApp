@@ -6,7 +6,7 @@
                 <table style="width:70%" class="table table-bordered table-dark">
                 <tr>
                     <th>Claim Date</th>
-                    <td>{{claimDate}}</td>
+                    <td>{{claimDate |  date: 'dd/MM/yyyy'}}</td>
                 </tr>
                 <tr *ngFor="let pol of policies">
                     <th>Claim ID</th>
