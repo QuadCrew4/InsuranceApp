@@ -9,7 +9,7 @@
                     <span class="alert-warning" *ngIf="pol.touched && pol.invalid">policy number is invalid</span>
                 </div>
                 <div class="wrap-input3 validate-input">
-                    <input class="input3" type="text" [(ngModel)]=mobile name="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}" #mob="ngModel">
+                    <input class="input3" type="text" [(ngModel)]=mobile name="mobile" placeholder="Mobile Number" required pattern="[6-9]{1}[0-9]{9}" #mob="ngModel">
                     <span class="focus-input3"></span>
                     <span class="alert-warning" *ngIf="mob.touched && mob.invalid">mobile number is invalid</span>
                 </div>

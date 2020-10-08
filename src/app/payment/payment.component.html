@@ -28,16 +28,17 @@
           <div class="card-grp space">
             <div class="card-item icon-relative">
               <label class="label">Expiry date:</label>
-              <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
+              <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00" [(ngModel)]=expiry required pattern="[0-9]{2}/[0-9]{2}" #ex="ngModel">
               <i class="far fa-calendar-alt"></i>
+              <span *ngIf="ex.touched && ex.invalid" class="alert-danger">Invalid Expiry Date</span>
             </div>
             <div class="card-item icon-relative">
               <label class="label">CVC:</label>
               <input type="text" class="input" name="cvc" [(ngModel)]=cvcnumber
               data-mask="000"  required pattern="[0-9]{3}"  placeholder="000" #cvc='ngModel'>
               <i class="fas fa-lock"></i>
+              <span *ngIf="cvc.touched && cvc.invalid" class="alert-danger">Invalid CVC</span>
             </div>
-            <span *ngIf="cvc.touched && cvc.invalid" class="alert-danger">Invalid CVC</span>
           </div>
             
           <button class="btn" (click)="pay()" [disabled]="!paymentForm.valid">

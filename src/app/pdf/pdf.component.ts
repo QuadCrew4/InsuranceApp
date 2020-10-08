@@ -15,7 +15,7 @@ import { ClaimticketService } from '../services/claimticket.service';
   public date=new Date();
   policies:Policy[]=[];
   public claimDate=this.date.toLocaleDateString();
-  public status:string="pending";
+  public status:string="Pending";
   public policyNo=localStorage.getItem("policyNo");
    public claimAmount=localStorage.getItem("amount");
 
