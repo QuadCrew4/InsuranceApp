@@ -5,7 +5,7 @@
       <form (ngSubmit)="registerUser()" #regForm="ngForm">
         <div class="form-group">
           <div class="input-group">
-            <input type="text" class="form-control" name= "username" [(ngModel)]=user.username placeholder="Username" required pattern="[A-Za-z0-9]{4,8}" #un1="ngModel">
+            <input type="text" class="form-control" name= "username" [(ngModel)]=user.username placeholder="Username" required pattern="[A-Za-z0-9]{4,15}" #un1="ngModel">
             <span class="alert-danger" *ngIf="un1.touched && un1.invalid">username is invalid</span>
           </div>
         </div>

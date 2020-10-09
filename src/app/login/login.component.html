@@ -11,7 +11,7 @@
     <!-- Login Form -->
     <form (ngSubmit)="loggedIn()" #loginForm="ngForm">
 
-      <input type="text" id="login" class="fadeIn second" [(ngModel)]=login.username name="username" placeholder="username" required pattern="[A-Za-z0-9]{4,8}" #un="ngModel">
+      <input type="text" id="login" class="fadeIn second" [(ngModel)]=login.username name="username" placeholder="username" required pattern="[A-Za-z0-9]{4,15}" #un="ngModel">
       <span class="alert-danger" *ngIf="un.touched && un.invalid">username is invalid</span>
       
       <input type="password" id="password" class="fadeIn third" [(ngModel)]=login.password name="password" placeholder="password" 
